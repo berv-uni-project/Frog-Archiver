@@ -1,0 +1,13 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>../assets/1455566047_Archive.ico</file>
+	<file>../assets/1455566415_Archive.png</file>
+    <file>../assets/1455566769_Log Out.ico</file>
+	<file>../assets/1455566763_Log Out.png</file>
+	<file>../assets/1455568106_Information.ico</file>
+	<file>../assets/1455568110_Information.png</file>
+	<file>../assets/1455813976_add-files-to-archive.png</file>
+	<file>../assets/1455813689_extract-archive.png</file>
+	<file>../assets/frog_mac_archigraphs.png</file>
+</qresource>
+</RCC>

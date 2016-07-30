@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>530</width>
+    <height>351</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frog Archiver</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/frog_mac_archigraphs.png</normaloff>:/frog_mac_archigraphs.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="4" column="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="text">
+         <string>Compress</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>Extract</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QTextEdit" name="textEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Welcome to Frog Archiver...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>530</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionCompress"/>
+    <addaction name="actionExtract"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCompressButton"/>
+   <addaction name="actionExtractButton"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455568110_Information.png</normaloff>:/assets/1455568110_Information.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionCompress">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455813976_add-files-to-archive.png</normaloff>:/assets/1455813976_add-files-to-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compress</string>
+   </property>
+  </action>
+  <action name="actionExtract">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455813689_extract-archive.png</normaloff>:/assets/1455813689_extract-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Extract</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455566763_Log Out.png</normaloff>:/assets/1455566763_Log Out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionCompressButton">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455813976_add-files-to-archive.png</normaloff>:/assets/1455813976_add-files-to-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>CompressButton</string>
+   </property>
+   <property name="toolTip">
+    <string>Compress your files</string>
+   </property>
+  </action>
+  <action name="actionExtractButton">
+   <property name="icon">
+    <iconset resource="FrogArchiver.qrc">
+     <normaloff>:/assets/1455813689_extract-archive.png</normaloff>:/assets/1455813689_extract-archive.png</iconset>
+   </property>
+   <property name="text">
+    <string>ExtractButton</string>
+   </property>
+   <property name="toolTip">
+    <string>Extract BZip File</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="FrogArchiver.qrc"/>
+ </resources>
+ <connections/>
+</ui>
