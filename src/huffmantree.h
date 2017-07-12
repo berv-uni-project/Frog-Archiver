@@ -30,8 +30,8 @@ class Tree {
         } //dtor
         const Tree& operator= (const Tree&);
 
-        friend decoder(string ifile);
-        friend encoder(QStringList, QString);
+        friend void decoder(QString ifi,QString directory,QTextEdit *textedit);
+        friend void encoder(QStringList inf,QString of,QProgressBar *Bar,QTextEdit *Text,int64_t totalsize);
 
         void destroy(Node* N){
             if (N) {

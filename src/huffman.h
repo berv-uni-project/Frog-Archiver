@@ -13,8 +13,8 @@
 #include <QFileInfo>
 #include <QProgressBar>
 #include <QTextEdit>
+#include <QThread>
 #include "prioqueue.h"
-#include <windows.h>
 #include "huffmantree.h"
 
 using namespace std;
@@ -310,7 +310,7 @@ public :
                 }
             } while(!q.isEmpty()); //until all sub-trees combined into one
 
-            Sleep(5);
+            QThread::msleep(200);
             //baca huffman string dari input file;
             //ubah ke char dan tulis di output file;
             string str;
