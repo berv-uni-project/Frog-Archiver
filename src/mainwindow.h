@@ -14,7 +14,8 @@
 #include <QTextStream>
 #include <stdint.h>
 #include "about.h"
-#include "huffman.h"
+#include "huffmandecoding.h"
+#include "huffmanencoding.h"
 
 namespace Ui {
 class MainWindow;
@@ -52,6 +53,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     About *aboutwindow;
+    HuffmanEncoding *huffmanEncoding;
+    HuffmanDecoding *huffmanDecoding;
 };
 
 #endif // MAINWINDOW_H

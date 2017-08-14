@@ -1,6 +1,11 @@
 #ifndef HUFFMANTREE_H
 #define HUFFMANTREE_H
 
+#include <string>
+#include <iostream>
+
+using namespace std;
+
 class Tree {
     private:
         class Node {
@@ -30,8 +35,8 @@ class Tree {
         } //dtor
         const Tree& operator= (const Tree&);
 
-        friend void decoder(QString ifi,QString directory,QTextEdit *textedit);
-        friend void encoder(QStringList inf,QString of,QProgressBar *Bar,QTextEdit *Text,int64_t totalsize);
+        friend void decoder();
+        friend void encoder();
 
         void destroy(Node* N){
             if (N) {

@@ -14,13 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    about.cpp
+    about.cpp \
+    huffmanencoding.cpp \
+    huffmandecoding.cpp
 
 HEADERS  += mainwindow.h \
     about.h \
-    huffman.h \
     prioqueue.h \
-    huffmantree.h
+    huffmantree.h \
+    huffmanencoding.h \
+    huffmandecoding.h
 
 FORMS    += mainwindow.ui \
     about.ui

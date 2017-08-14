@@ -6,11 +6,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    huffmanEncoding = new HuffmanEncoding();
+    huffmanDecoding = new HuffmanDecoding();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete huffmanEncoding;
+    delete huffmanDecoding;
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -67,20 +71,11 @@ void MainWindow::Extract()
         } else
         {
             ui->textEdit->setText("");
-            QTime timer;
-            Huffman H;
-            timer.start();
-            H.decoder(filename,outputdir,ui->textEdit);
-            int time = timer.elapsed();
-            ui->textEdit->append("Result : ");
-            ui->textEdit->append(QString("File Resource : %1").arg(filename));
-            ui->textEdit->append(QString("Destination directory : %1").arg(outputdir));
-            QFileInfo temp(filename);
-            ui->textEdit->append(QString("Resource Size : %1 byte").arg(temp.size()));
-            ui->textEdit->append(QString("Total Extracted Size : %1 byte").arg(H.tempsize));
-            ui->textEdit->append(QString("Time elapsed : %1 ms").arg(time));
-            ui->progressBar->setValue(100);
-            ui->textEdit->append("Extract Success");
+            connect(huffmanDecoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
+            connect(huffmanDecoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+            huffmanDecoding->setInputFile(filename);
+            huffmanDecoding->setOutputFile(outputdir);
+            huffmanDecoding->start();
         }
     }
 }
@@ -126,41 +121,13 @@ void MainWindow::Compress()
             }
 
             //Starting
-            QTime TheTime;
-            Huffman H;
             ui->textEdit->append("Compressing...");
-            TheTime.start();
-            H.encoder(files,outputfile,ui->progressBar,ui->textEdit,totalsize);
-            int time = TheTime.elapsed();
-            ui->textEdit->append("-----------------------------------------------------");
-            ui->textEdit->append("Result : ");
-            ui->textEdit->append(QString("Output File : %1").arg(outputfile));
-            ui->textEdit->append(QString("Time Elapsed : %1 ms").arg(time));
-            ui->textEdit->append(QString("Total File Size Process : %1 byte").arg(totalsize));
-            int64_t compresssize = QFileInfo(outputfile).size();
-            ui->textEdit->append(QString("Compressed File Size : %1 byte").arg(compresssize));
-            ui->textEdit->append(QString("Compress Ratio : %1%").arg(100*compresssize/totalsize));
-            QList<double>::iterator il = H.ratat.begin();
-            int i = 1;
-            while(il!=H.ratat.end())
-            {
-                ui->textEdit->append(QString("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
-                        i++;
-                ++il;
-            }
-            QList<double>::iterator ih = H.entropit.begin();
-            i = 1;
-            while(ih!=H.entropit.end())
-            {
-                ui->textEdit->append(QString("Entropi file %1 : %2").arg(i).arg(*ih));
-                        i++;
-                ++ih;
-            }
-            //Finish
-
-            ui->progressBar->setValue(100);
-
-            ui->textEdit->append("Compress Success");
+            connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
+            connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+            huffmanEncoding->setInputFile(list);
+            huffmanEncoding->setOutputFile(outputfile);
+            huffmanEncoding->setTotalSize(totalsize);
+            huffmanEncoding->start();
         }
     }
 }
