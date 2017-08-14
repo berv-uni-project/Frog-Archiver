@@ -16,17 +16,20 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     about.cpp \
     huffmanencoding.cpp \
-    huffmandecoding.cpp
+    huffmandecoding.cpp \
+    license.cpp
 
 HEADERS  += mainwindow.h \
     about.h \
     prioqueue.h \
     huffmantree.h \
     huffmanencoding.h \
-    huffmandecoding.h
+    huffmandecoding.h \
+    license.h
 
 FORMS    += mainwindow.ui \
-    about.ui
+    about.ui \
+    license.ui
 
 
 

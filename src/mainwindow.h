@@ -50,6 +50,8 @@ private slots:
 
     void on_actionExtractButton_triggered();
 
+    void on_actionLicense_triggered();
+
 private:
     Ui::MainWindow *ui;
     About *aboutwindow;

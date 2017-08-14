@@ -4,6 +4,9 @@
 
 #include <QFileInfo>
 #include <QTime>
+#include <cmath>
+
+using namespace std;
 
 HuffmanEncoding::HuffmanEncoding()
 {
@@ -101,7 +104,7 @@ void HuffmanEncoding::encoder() {
         unsigned int total_chars=(*t1).get_freq();
         string H_table[256];
         //initialisasi perhitungan entropi
-        double sum=0, peluang=0,entropi=0;
+        double sum=0, peluang=0, entropi=0, tempCount = 0;
         unsigned char uc;
         for(unsigned short us=0; us<256; ++us) {
             H_table[us]="";
@@ -110,7 +113,8 @@ void HuffmanEncoding::encoder() {
                 (*t1).huffman((*t1).get_root(), uc, "", H_table[us]);
                 sum += H_table[us].size()*f[us];
                 peluang = (double) f[us] / total_chars;
-                entropi += ((-1)*peluang*log2(peluang));
+                tempCount = log2(peluang);
+                entropi += ((-1) * peluang * tempCount);
             }
         }
         entropit.push_back(entropi);
@@ -150,5 +154,29 @@ void HuffmanEncoding::encoder() {
     outfile.close();
     //Close outfile
     int time = timer.elapsed();
+    emit progressChanged("-----------------------------------------------------");
+    emit progressChanged("Result : ");
+    emit progressChanged(QString("Output File : %1").arg(of));
+    emit progressChanged(QString("Time Elapsed : %1 ms").arg(time));
+    emit progressChanged(QString("Total File Size Process : %1 byte").arg(totalsize));
+    int64_t compresssize = QFileInfo(of).size();
+    emit progressChanged(QString("Compressed File Size : %1 byte").arg(compresssize));
+    emit progressChanged(QString("Compress Ratio : %1%").arg(100*compresssize/totalsize));
+    QList<double>::iterator il = ratat.begin();
+    int i = 1;
+    while(il != ratat.end()) {
+         emit progressChanged(QString("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
+         i++;
+         ++il;
+    }
+    QList<double>::iterator ih = entropit.begin();
+    i = 1;
+    while (ih != entropit.end()) {
+         emit progressChanged(QString("Entropi file %1 : %2").arg(i).arg(*ih));
+         i++;
+         ++ih;
+    }
+    emit progressCounted(100);
+    emit progressChanged("Compress Success");
 }
 

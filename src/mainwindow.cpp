@@ -1,3 +1,4 @@
+#include "license.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -145,4 +146,11 @@ void MainWindow::on_actionCompressButton_triggered()
 void MainWindow::on_actionExtractButton_triggered()
 {
     Extract();
+}
+
+void MainWindow::on_actionLicense_triggered()
+{
+    License license;
+    license.setModal(true);
+    license.exec();
 }

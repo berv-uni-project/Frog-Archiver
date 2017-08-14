@@ -2,6 +2,7 @@
 #define PRIOQUEUE_H
 
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 /////////// PRIORITY QUEUE //////////////
