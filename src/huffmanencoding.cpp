@@ -178,5 +178,6 @@ void HuffmanEncoding::encoder() {
     }
     emit progressCounted(100);
     emit progressChanged("Compress Success");
+    emit setEnabled(true);
 }
 

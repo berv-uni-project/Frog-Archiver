@@ -139,4 +139,5 @@ void HuffmanDecoding::decoder() {
     emit progressChanged(QString("Time elapsed : %1 ms").arg(time));
     emit progressCounted(100);
     emit progressChanged("Extract Success");
+    emit setEnabled(true);
 }

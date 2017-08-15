@@ -70,7 +70,7 @@ private:
 signals:
     void progressChanged(QString info);
     void progressCounted(int progress);
-
+    void setEnabled(bool enable);
 
 };
 

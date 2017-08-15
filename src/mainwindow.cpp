@@ -9,6 +9,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     huffmanEncoding = new HuffmanEncoding();
     huffmanDecoding = new HuffmanDecoding();
+
+    connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
+    connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionCompress, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionCompressButton, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionExtract, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionExtractButton, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->buttonCompress, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->buttonExtract, SLOT(setEnabled(bool)));
+
+    connect(huffmanDecoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
+    connect(huffmanDecoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionCompress, SLOT(setEnabled(bool)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionCompressButton, SLOT(setEnabled(bool)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionExtract, SLOT(setEnabled(bool)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionExtractButton, SLOT(setEnabled(bool)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->buttonCompress, SLOT(setEnabled(bool)));
+    connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->buttonExtract, SLOT(setEnabled(bool)));
+
 }
 
 MainWindow::~MainWindow()
@@ -30,19 +49,9 @@ void MainWindow::on_actionAbout_triggered()
     Ab1.exec();
 }
 
-void MainWindow::on_pushButton_4_clicked()
-{
-    Extract();
-}
-
 void MainWindow::on_textEdit_textChanged()
 {
 
-}
-
-void MainWindow::on_pushButton_6_clicked()
-{
-    Compress();
 }
 
 void MainWindow::on_actionCompress_triggered()
@@ -64,16 +73,21 @@ void MainWindow::Extract()
         ui->textEdit->setText("Operation Canceled");
     } else //Open File
     {
-        QString outputdir = QFileDialog::getExistingDirectory(this,tr("Choose Directory to Extract"),
+        QString outputdir = QFileDialog::getExistingDirectory(this,
+                                                              tr("Choose Directory to Extract"),
                                                               "C:\\");
         if (outputdir=="")
         {
             ui->textEdit->setText("Operation Canceled");
         } else
         {
+            ui->actionCompress->setDisabled(true);
+            ui->actionCompressButton->setDisabled(true);
+            ui->actionExtract->setDisabled(true);
+            ui->actionExtractButton->setDisabled(true);
+            ui->buttonCompress->setDisabled(true);
+            ui->buttonExtract->setDisabled(true);
             ui->textEdit->setText("");
-            connect(huffmanDecoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
-            connect(huffmanDecoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
             huffmanDecoding->setInputFile(filename);
             huffmanDecoding->setOutputFile(outputdir);
             huffmanDecoding->start();
@@ -112,6 +126,12 @@ void MainWindow::Compress()
             if (!outputfile.endsWith(".frog")) {
                 outputfile.append(".frog");
             }
+            ui->actionCompress->setDisabled(true);
+            ui->actionCompressButton->setDisabled(true);
+            ui->actionExtract->setDisabled(true);
+            ui->actionExtractButton->setDisabled(true);
+            ui->buttonCompress->setDisabled(true);
+            ui->buttonExtract->setDisabled(true);
             //Init Compressor
             int64_t totalsize;
             totalsize=0;
@@ -127,8 +147,6 @@ void MainWindow::Compress()
 
             //Starting
             ui->textEdit->append("Compressing...");
-            connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
-            connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
             huffmanEncoding->setInputFile(list);
             huffmanEncoding->setOutputFile(outputfile);
             huffmanEncoding->setTotalSize(totalsize);
@@ -157,4 +175,14 @@ void MainWindow::on_actionLicense_triggered()
     License license;
     license.setModal(true);
     license.exec();
+}
+
+void MainWindow::on_buttonExtract_clicked()
+{
+    Extract();
+}
+
+void MainWindow::on_buttonCompress_clicked()
+{
+    Compress();
 }

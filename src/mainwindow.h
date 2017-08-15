@@ -36,11 +36,7 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void on_pushButton_4_clicked();
-
     void on_textEdit_textChanged();
-
-    void on_pushButton_6_clicked();
 
     void on_actionCompress_triggered();
 
@@ -51,6 +47,10 @@ private slots:
     void on_actionExtractButton_triggered();
 
     void on_actionLicense_triggered();
+
+    void on_buttonExtract_clicked();
+
+    void on_buttonCompress_clicked();
 
 private:
     Ui::MainWindow *ui;
