@@ -101,13 +101,17 @@ void MainWindow::Compress()
     {
         //Choose save file
         QString outputfile = QFileDialog::getSaveFileName(this,
-                                                  tr("Location to Compress")
-                                                  ,"C:\\",tr("Frog File (*.frog)"));
-        if (outputfile=="") // Cancel
+                                                          tr("Location to Compress"),
+                                                          QString(),
+                                                          tr("Frog File (*.frog)"));
+        if (outputfile.isNull() || outputfile.isEmpty()) // Cancel
         {
             ui->textEdit->setText("Operation Canceled."); //Cancel operation
         } else //get filename to save
         {
+            if (!outputfile.endsWith(".frog")) {
+                outputfile.append(".frog");
+            }
             //Init Compressor
             int64_t totalsize;
             totalsize=0;
