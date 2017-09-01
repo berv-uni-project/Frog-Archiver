@@ -144,7 +144,7 @@ void HuffmanEncoding::encoder() {
         QFileInfo thisfile(*it);
         activefile = *it;
         tempsize += thisfile.size();
-        int64_t progress = 100*tempsize/totalsize;
+        int64_t progress = 100 * tempsize / totalsize;
         emit progressChanged(QString("%1 ... %2%").arg(*it).arg(progress));
         emit progressCounted(progress);
 

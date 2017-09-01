@@ -24,10 +24,10 @@ void HuffmanDecoding::decoder() {
     while(infile.get(cc)){
     //loop until eof in decoded file
 
-        string ofile=directory.toStdString();
+        string ofile = directory.toStdString();
         ofile.append("/");
 
-        while(cc!='.'){
+        while(cc != '.'){
             ofile+=cc;
             infile.get(cc);
         }
@@ -98,14 +98,14 @@ void HuffmanDecoding::decoder() {
         //ubah ke char dan tulis di output file;
         string str;
         unsigned char ch2;
-        unsigned int total_chars=(*t1).get_freq();
-        int bit=0;
-        unsigned char cs= infile.get();
-        while(total_chars>0){
+        unsigned int total_chars = (*t1).get_freq();
+        int bit = 0;
+        unsigned char cs = infile.get();
+        while(total_chars > 0){
             str=""; //current Huffman string
             do {
                 //baca huffman string bit per bit
-                ch=huffman_read(infile,bit,cs);
+                ch = huffman_read(infile,bit,cs);
                 if(ch==0){
                     str = str + '0';
                 } else if(ch==1){
@@ -123,7 +123,7 @@ void HuffmanDecoding::decoder() {
         QString outfilename;
         outfilename = QString::fromStdString(ofile);
         QFileInfo temp(outfilename);
-        tempsize = tempsize+temp.size();
+        tempsize = tempsize + temp.size();
         emit progressChanged(QString("Compress %1 finished").arg(outfilename));
         emit progressChanged(QString("Size : %1 byte ").arg(temp.size()));
     }

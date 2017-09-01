@@ -27,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+# QT User
+*.pro.user
+*.pro.user.*
+
+# Directory
+build-*
