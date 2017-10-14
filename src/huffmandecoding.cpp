@@ -21,23 +21,19 @@ void HuffmanDecoding::decoder() {
     }
 
     char cc;
+    int number_of_file = infile.get();
+    int proccess = 0;
     while(infile.get(cc)){
     //loop until eof in decoded file
 
         string ofile = directory.toStdString();
         ofile.append("/");
-
-        while(cc != '.'){
-            ofile+=cc;
+        if (cc == '\\') {
             infile.get(cc);
         }
 
-        ofile+=cc;
-
-        infile.get(cc);
-
         while(cc!='\\'){
-            ofile+=cc;
+            ofile += cc;
             infile.get(cc);
         }
 
@@ -93,7 +89,6 @@ void HuffmanDecoding::decoder() {
             }
         } while(!q.isEmpty()); //until all sub-trees combined into one
 
-        QThread::msleep(200);
         //baca huffman string dari input file;
         //ubah ke char dan tulis di output file;
         string str;
@@ -106,9 +101,9 @@ void HuffmanDecoding::decoder() {
             do {
                 //baca huffman string bit per bit
                 ch = huffman_read(infile,bit,cs);
-                if(ch==0){
+                if(ch == 0){
                     str = str + '0';
-                } else if(ch==1){
+                } else if(ch == 1){
                     str = str + '1';
                 }
             } while(!(*t1).get_huf_char(str, ch2));
@@ -116,7 +111,7 @@ void HuffmanDecoding::decoder() {
 
             //tuliskan char ke output file
             outfile.put(static_cast<char>(ch2));
-            --total_chars;
+            total_chars -= 1;
         }
 
         outfile.close();
@@ -124,8 +119,10 @@ void HuffmanDecoding::decoder() {
         outfilename = QString::fromStdString(ofile);
         QFileInfo temp(outfilename);
         tempsize = tempsize + temp.size();
-        emit progressChanged(QString("Compress %1 finished").arg(outfilename));
+        emit progressChanged(QString("Extract %1 finished").arg(outfilename));
         emit progressChanged(QString("Size : %1 byte ").arg(temp.size()));
+        emit progressCounted(100 * proccess / number_of_file);
+        proccess += 1;
     }
     //end of read decode file
     infile.close();

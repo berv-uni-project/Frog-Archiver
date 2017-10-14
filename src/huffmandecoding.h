@@ -43,12 +43,8 @@ private:
     QString directory;
 
 private:
-    unsigned char huffman_read(ifstream& infile,int &bit_pos,unsigned char &temp_char){
-        //static int bit_pos = 0;  //byte block (0-7)
-        //static unsigned char temp_char = infile.get();
-
+    unsigned char huffman_read(ifstream& infile, int &bit_pos,unsigned char &temp_char){
         unsigned char c;
-
         c = (temp_char >> (7-bit_pos)) % 2; //get bit from byte
         ++bit_pos;
         bit_pos = bit_pos % 8;

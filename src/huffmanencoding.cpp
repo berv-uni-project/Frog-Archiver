@@ -8,6 +8,9 @@
 
 using namespace std;
 
+int HuffmanEncoding::bit_pos = 0;
+unsigned char HuffmanEncoding::temp_char = '\0';
+
 HuffmanEncoding::HuffmanEncoding()
 {
 
@@ -22,9 +25,12 @@ void HuffmanEncoding::encoder() {
     //Setting output file
     string ofile = of.toStdString();
     ofstream outfile(ofile.c_str(), ios::out|ios::binary);
+
     if (!outfile) {
         exit(1);
     }
+
+    outfile.put(inf.size());
 
     //loop many file
     QStringList::iterator it = inf.begin();
@@ -63,12 +69,12 @@ void HuffmanEncoding::encoder() {
         QFileInfo NF(*it);
         QString temp = NF.fileName();
         string innfile= temp.toStdString();
-
+        outfile.put('\\');
         //write file name in header
         for (unsigned int i=0; i<innfile.size(); ++i) {
             outfile.put(innfile[i]);
         }
-            outfile.put('\\');
+        outfile.put('\\');
 
         for (int i=0; i<256; ++i) {
             //output char freq table to the output file
@@ -139,6 +145,7 @@ void HuffmanEncoding::encoder() {
 
         ch2=2; // send EOF
         huffmanWrite(ch2, outfile);
+
 
         //Change Proccess
         QFileInfo thisfile(*it);

@@ -4,16 +4,41 @@
 
 Frog Archiver is compression tools for any files you have.
 
-## Frog Archiver v.0.0
+## Frog Archiver v.1.0
+
+### Watch Demo Here
+
+Link : [https://youtu.be/THsPWMalRmM](https://youtu.be/THsPWMalRmM)
+
+### Screenshot
+
+#### Linux
+
+![Main Window](screenshot/linux/main-window.png)
+
+![About](screenshot/linux/about.png)
+
+![License](screenshot/linux/license.png)
+
+![Compressing](screenshot/linux/compressing.png)
+
+![Extract](screenshot/linux/extract.png)
+
+#### Windows
+
+![Main Window](screenshot/windows/main-window.png)
+
+![About](screenshot/windows/about.png)
+
+![License](screenshot/windows/license.PNG)
+
+![Compressing](screenshot/windows/compressing.png)
+
+![Extract](screenshot/windows/extract.png)
 
 ### How to Run?
 
-For Windows :
-* Take your binary version with library dependency.
-* Run it.
- 
-For Linux :
-* You must import the project to Qt GUI and build manually.
+Download in Release Page.
 
 ### How to Build?
 
@@ -22,16 +47,15 @@ For Linux :
 3. Build
 4. To run it with double click, you must complete the binary version with qt library.
 
+Alternative
+
+3. Run
+
 ### Created by :
 
 * Adam Rotal Yuliandaru
 * Ade Surya Ramadhani
 * Bervianto Leo Pratama
-
-
-### Watch Demo Here
-
-Link : [https://youtu.be/THsPWMalRmM](https://youtu.be/THsPWMalRmM)
 
 ---
 

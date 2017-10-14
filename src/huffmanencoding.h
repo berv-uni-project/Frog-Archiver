@@ -13,6 +13,9 @@ class HuffmanEncoding: public QThread
     Q_OBJECT
 public:
     HuffmanEncoding();
+    static int bit_pos; //byte block (0-7)
+    static unsigned char temp_char;
+
     void setInputFile(QStringList input) {
         inf = input;
     }
@@ -42,9 +45,6 @@ private:
     QString activefile;
 
     void huffmanWrite(unsigned char c, ofstream& outfile) {
-        static int bit_pos = 0; //byte block (0-7)
-        static unsigned char temp_char = '\0';
-
         if (c < 2) {
             if (c==1){
                 temp_char = temp_char | (c<<(7-bit_pos)); //add 1 to the byte
@@ -55,19 +55,14 @@ private:
             bit_pos %= 8;
             if (bit_pos==0) {
                 outfile.put(temp_char);
-
-               // cout<<temp_char<<" = "<<(int)temp_char<<endl;
-
                 temp_char = '\0';
             }
         } else {
             if(bit_pos!=0){
                 outfile.put(temp_char);
-            //	cout<<temp_char<<" = "<<(int)temp_char<<endl;
             }
             temp_char = '\0';
             bit_pos = 0;
-            //buat apa??
         }
     }
 
