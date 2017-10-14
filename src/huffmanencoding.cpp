@@ -68,7 +68,7 @@ void HuffmanEncoding::encoder() {
         for (unsigned int i=0; i<innfile.size(); ++i) {
             outfile.put(innfile[i]);
         }
-            outfile.put('\n');
+            outfile.put('\\');
 
         for (int i=0; i<256; ++i) {
             //output char freq table to the output file

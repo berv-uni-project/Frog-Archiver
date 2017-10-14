@@ -36,7 +36,7 @@ void HuffmanDecoding::decoder() {
 
         infile.get(cc);
 
-        while(cc!='\n'){
+        while(cc!='\\'){
             ofile+=cc;
             infile.get(cc);
         }
