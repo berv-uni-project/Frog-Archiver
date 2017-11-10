@@ -16,6 +16,28 @@ HuffmanEncoding::HuffmanEncoding()
 
 }
 
+void HuffmanEncoding::huffmanWrite(unsigned char c, ofstream& outfile) {
+    if (c < 2) {
+        if (c==1){
+            temp_char = temp_char | (c<<(7-bit_pos)); //add 1 to the byte
+        } else {
+            temp_char = temp_char & static_cast<unsigned char> (255-(1<<(7-bit_pos))); //add 0 to the byte
+        }
+        ++bit_pos;
+        bit_pos %= 8;
+        if (bit_pos==0) {
+            outfile.put(temp_char);
+            temp_char = '\0';
+        }
+    } else {
+        if(bit_pos!=0){
+            outfile.put(temp_char);
+        }
+        temp_char = '\0';
+        bit_pos = 0;
+    }
+}
+
 void HuffmanEncoding::encoder() {
     QTime timer;
     timer.start();

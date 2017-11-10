@@ -5,6 +5,25 @@ HuffmanDecoding::HuffmanDecoding()
 
 }
 
+unsigned char HuffmanDecoding::huffman_read(ifstream& infile, int &bit_pos,unsigned char &temp_char){
+    unsigned char c;
+    c = (temp_char >> (7-bit_pos)) % 2; //get bit from byte
+    ++bit_pos;
+    bit_pos = bit_pos % 8;
+
+    if(bit_pos == 0) {
+        if (!infile.eof()){  //bisa aja gak ketemu eof di file yang bukan terakhir soalnya multifile
+            temp_char = infile.get();
+        } else {
+            c = 2;
+            bit_pos = 0;  //byte block (0-7)
+            temp_char = infile.get();
+        }
+    }
+
+    return c;
+}
+
 void HuffmanDecoding::decoder() {
     QTime timer;
     timer.start();
