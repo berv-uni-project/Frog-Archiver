@@ -8,7 +8,11 @@ Frog Archiver is compression tools for any files you have.
 
 ### Watch Demo Here
 
-Link : [https://youtu.be/THsPWMalRmM](https://youtu.be/THsPWMalRmM)
+First (Alpha Version): [https://youtu.be/THsPWMalRmM](https://youtu.be/THsPWMalRmM)
+
+Windows Version: [https://youtu.be/p-vew6fqxTY](https://youtu.be/p-vew6fqxTY)
+
+Linux Version: [https://youtu.be/NKV_E7RWcxo](https://youtu.be/NKV_E7RWcxo)
 
 ### Screenshot
 
