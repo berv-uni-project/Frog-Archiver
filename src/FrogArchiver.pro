@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     about.cpp \
     huffmanencoding.cpp \
     huffmandecoding.cpp \
-    license.cpp
+    license.cpp \
+    dialogembed.cpp
 
 HEADERS  += mainwindow.h \
     about.h \
@@ -25,11 +26,13 @@ HEADERS  += mainwindow.h \
     huffmantree.h \
     huffmanencoding.h \
     huffmandecoding.h \
-    license.h
+    license.h \
+    dialogembed.h
 
 FORMS    += mainwindow.ui \
     about.ui \
-    license.ui
+    license.ui \
+    dialogembed.ui
 
 
 

@@ -8,29 +8,29 @@ using namespace std;
 /////////// PRIORITY QUEUE //////////////
 template <class Type>
 class Queue {
-    public :
-        Queue (int d = 2);      //ctor
-        ~Queue();               //dtor
-        Queue (const Queue&);   //cctor
-        const Queue& operator= (const Queue&);
+public :
+    Queue (int d = 2);      //ctor
+    ~Queue();               //dtor
+    Queue (const Queue&);   //cctor
+    const Queue& operator= (const Queue&);
 
-        void push(Type*);
-        Type* pop();
-        Type* head();
+    void push(Type*);
+    Type* pop();
+    Type* head();
 
-        bool isEmpty() const;
-        bool isFull() const;
+    bool isEmpty() const;
+    bool isFull() const;
 
-        void reheapUp(int, int); //fix heap upward
-        void reheapDown(int, int); //fix heap downward
-        void swap(Type* &, Type* &);
+    void reheapUp(int, int); //fix heap upward
+    void reheapDown(int, int); //fix heap downward
+    void swap(Type* &, Type* &);
 
-    private:
-        int tail;   //last element
-        Type* *arr;    //dinamic array
-        int size;   //current size array
-        static const int incSize = 10;
-        int D;
+private:
+    int tail;   //last element
+    Type* *arr;    //dinamic array
+    int size;   //current size array
+    static const int incSize = 10;
+    int D;
 };
 
 //constructor to make new Queue
@@ -131,7 +131,7 @@ void Queue<Type>::reheapUp(int root, int bottom) {
     }
 }
 
- //fix heap downward
+//fix heap downward
 template <class Type>
 void Queue<Type>::reheapDown(int root, int bottom) {
     int minChild, firstChild, child;

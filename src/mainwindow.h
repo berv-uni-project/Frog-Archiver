@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QTime>
 #include <QTextStream>
+#include <QShortcut>
 #include <stdint.h>
 #include "about.h"
 #include "huffmandecoding.h"
@@ -52,11 +53,16 @@ private slots:
 
     void on_buttonCompress_clicked();
 
+    // void DeleteItem();
+
+    void on_addButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     About *aboutwindow;
     HuffmanEncoding *huffmanEncoding;
     HuffmanDecoding *huffmanDecoding;
+    // QShortcut* shortcut;
 };
 
 #endif // MAINWINDOW_H
