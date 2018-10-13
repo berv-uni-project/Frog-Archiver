@@ -26,12 +26,20 @@
         <property name="text">
          <string>Compress</string>
         </property>
+        <property name="icon">
+         <iconset resource="FrogArchiver.qrc">
+          <normaloff>:/assets/1455813976_add-files-to-archive.png</normaloff>:/assets/1455813976_add-files-to-archive.png</iconset>
+        </property>
        </widget>
       </item>
       <item row="3" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QPushButton" name="buttonExtract">
         <property name="text">
          <string>Extract</string>
+        </property>
+        <property name="icon">
+         <iconset resource="FrogArchiver.qrc">
+          <normaloff>:/assets/1455813689_extract-archive.png</normaloff>:/assets/1455813689_extract-archive.png</iconset>
         </property>
        </widget>
       </item>

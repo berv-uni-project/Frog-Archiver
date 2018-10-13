@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QSize iconSize = QSize(fontMetrics().height(), fontMetrics().height());
+    ui->buttonCompress->setIconSize(iconSize);
+    ui->buttonExtract->setIconSize(iconSize);
     //shortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this, SLOT(DeleteItem()));
 
     huffmanEncoding = new HuffmanEncoding();
