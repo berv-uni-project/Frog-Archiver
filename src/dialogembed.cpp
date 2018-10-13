@@ -9,6 +9,14 @@ DialogEmbed::DialogEmbed(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QSize iconSize = QSize (fontMetrics().height(), fontMetrics().height());
+
+    ui->addFilesBUtton->setIconSize(iconSize);
+    ui->clearButton->setIcon(style()->standardIcon(QStyle::SP_DialogDiscardButton));
+    ui->clearButton->setIconSize(iconSize);
+    ui->embedButton->setIcon(style()->standardIcon(QStyle::SP_DialogSaveButton));
+    ui->embedButton->setIconSize(iconSize);
+
     huffmanEncoding = new HuffmanEncoding();
 
     connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
