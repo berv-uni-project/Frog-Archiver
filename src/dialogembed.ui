@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>969</width>
+    <height>918</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
   <property name="modal">
    <bool>false</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
@@ -32,18 +32,26 @@
     <widget class="QListWidget" name="listWidget"/>
    </item>
    <item>
-    <widget class="QPushButton" name="addFilesBUtton">
-     <property name="text">
-      <string>Add Files</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="clearButton">
-     <property name="text">
-      <string>Clear Files</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="addFilesBUtton">
+       <property name="text">
+        <string>Add Files</string>
+       </property>
+       <property name="icon">
+        <iconset resource="FrogArchiver.qrc">
+         <normaloff>:/assets/1455813976_add-files-to-archive.png</normaloff>:/assets/1455813976_add-files-to-archive.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clearButton">
+       <property name="text">
+        <string>Clear Files</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
@@ -53,30 +61,40 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="saveAsText">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="toolTip">
-      <string>Location</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="placeholderText">
-      <string>Save to/Save as</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="saveAsButton">
-     <property name="text">
-      <string>Save As</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="saveAsText">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>Location</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Save to/Save as</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveAsButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QPushButton" name="embedButton">
