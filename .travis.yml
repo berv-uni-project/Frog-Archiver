@@ -3,14 +3,12 @@ dist: xenial
 language: cpp
 
 before_install:
-  - sudo add-apt-repository --yes ppa:beineri/opt-qt571-xenial
-  - sudo apt-get update -qq
-
-install:
-  - sudo apt-get -y install qt571[QTPACKAGE]
+ - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+ - sudo apt-get update -qq
+ - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
+ - sudo apt-get install qt5-default qttools5-dev-tools
 
 script:
-  - source /opt/qt571/bin/qt571-env.sh
-  - /opt/qt571/bin/qmake -project
-  - /opt/qt571/bin/qmake src/FrogArchiver.pro
-  - make
+ - qmake -project
+ - qmake src/FrogArchiver.pro
+ - make
