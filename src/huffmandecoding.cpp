@@ -43,7 +43,7 @@ void HuffmanDecoding::decoder() {
     int number_of_file = infile.get();
     int proccess = 0;
     while(infile.get(cc)){
-    //loop until eof in decoded file
+        //loop until eof in decoded file
 
         string ofile = directory.toStdString();
         ofile.append("/");

@@ -1,26 +1,35 @@
 #include "license.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dialogembed.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QSize iconSize = QSize(fontMetrics().height(), fontMetrics().height());
+    ui->buttonCompress->setIconSize(iconSize);
+    ui->buttonExtract->setIconSize(iconSize);
+    //shortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this, SLOT(DeleteItem()));
+
     huffmanEncoding = new HuffmanEncoding();
     huffmanDecoding = new HuffmanDecoding();
-
+    /*
     connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
     connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+    */
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionCompress, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionCompressButton, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionExtract, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->actionExtractButton, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->buttonCompress, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->buttonExtract, SLOT(setEnabled(bool)));
-
+    /*
     connect(huffmanDecoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
     connect(huffmanDecoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
+    */
     connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionCompress, SLOT(setEnabled(bool)));
     connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionCompressButton, SLOT(setEnabled(bool)));
     connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->actionExtract, SLOT(setEnabled(bool)));
@@ -35,6 +44,7 @@ MainWindow::~MainWindow()
     delete ui;
     delete huffmanEncoding;
     delete huffmanDecoding;
+    //delete shortcut;
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -61,6 +71,7 @@ void MainWindow::on_actionCompress_triggered()
 
 void MainWindow::Extract()
 {
+    /*
     ui->progressBar->setValue(0);
     QString filename=QFileDialog::getOpenFileName (
                 this,
@@ -93,18 +104,23 @@ void MainWindow::Extract()
             huffmanDecoding->start();
         }
     }
+    */
 }
 
 void MainWindow::Compress()
 {
+    DialogEmbed dialogEmbed;
+    dialogEmbed.setModal(true);
+    dialogEmbed.exec();
+    /*
     //init Compress
     ui->progressBar->setValue(0);
     //Select Files
     QStringList files = QFileDialog::getOpenFileNames(
-                            this,
-                            "Files to Compress",
-                            "C://",
-                            "All Files (*.*)");
+                this,
+                "Files to Compress",
+                "C://",
+                "All Files (*.*)");
     QStringList list = files;
     QStringList::Iterator it = list.begin();
     //Proccessing List
@@ -153,6 +169,7 @@ void MainWindow::Compress()
             huffmanEncoding->start();
         }
     }
+    */
 }
 
 void MainWindow::on_actionExtract_triggered()
@@ -185,4 +202,30 @@ void MainWindow::on_buttonExtract_clicked()
 void MainWindow::on_buttonCompress_clicked()
 {
     Compress();
+}
+
+void MainWindow::on_addButton_clicked()
+{
+    /*
+    ui->progressBar->setValue(0);
+    //Select Files
+    QStringList files = QFileDialog::getOpenFileNames(
+                this,
+                "Files to Compress",
+                "C://",
+                "All Files (*.*)");
+    QStringList list = files;
+    QStringList::Iterator it = list.begin();
+    //Proccessing List
+    if (it==list.end()) //Cancel or no files
+    {
+        ui->textEdit->setText("Operation Canceled.");
+    } else
+    {
+        while(it != list.end()) {
+            ui->listWidget->addItem(*it);
+            ++it;
+        }
+    }
+    */
 }

@@ -194,16 +194,16 @@ void HuffmanEncoding::encoder() {
     QList<double>::iterator il = ratat.begin();
     int i = 1;
     while(il != ratat.end()) {
-         emit progressChanged(QString("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
-         i++;
-         ++il;
+        emit progressChanged(QString("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
+        i++;
+        ++il;
     }
     QList<double>::iterator ih = entropit.begin();
     i = 1;
     while (ih != entropit.end()) {
-         emit progressChanged(QString("Entropi file %1 : %2").arg(i).arg(*ih));
-         i++;
-         ++ih;
+        emit progressChanged(QString("Entropi file %1 : %2").arg(i).arg(*ih));
+        i++;
+        ++ih;
     }
     emit progressCounted(100);
     emit progressChanged("Compress Success");

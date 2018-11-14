@@ -21,38 +21,25 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="4" column="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+      <item row="3" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QPushButton" name="buttonCompress">
         <property name="text">
          <string>Compress</string>
         </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QProgressBar" name="progressBar">
-        <property name="value">
-         <number>0</number>
+        <property name="icon">
+         <iconset resource="FrogArchiver.qrc">
+          <normaloff>:/assets/1455813976_add-files-to-archive.png</normaloff>:/assets/1455813976_add-files-to-archive.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="4" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+      <item row="3" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QPushButton" name="buttonExtract">
         <property name="text">
          <string>Extract</string>
         </property>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QTextEdit" name="textEdit">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-        <property name="html">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Welcome to Frog Archiver...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <property name="icon">
+         <iconset resource="FrogArchiver.qrc">
+          <normaloff>:/assets/1455813689_extract-archive.png</normaloff>:/assets/1455813689_extract-archive.png</iconset>
         </property>
        </widget>
       </item>
@@ -66,7 +53,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>530</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
