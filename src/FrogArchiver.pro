@@ -34,7 +34,7 @@ FORMS    += mainwindow.ui \
     license.ui \
     dialogembed.ui
 
-
+QMAKE_CXXFLAGS += -std=c++11
 
 RESOURCES += FrogArchiver.qrc
 
