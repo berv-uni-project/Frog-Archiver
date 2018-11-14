@@ -8,6 +8,7 @@ DialogEmbed::DialogEmbed(QWidget *parent) :
     ui(new Ui::DialogEmbed)
 {
     ui->setupUi(this);
+    ui->progressBar->setHidden(true);
 
     QSize iconSize = QSize (fontMetrics().height(), fontMetrics().height());
 
@@ -18,6 +19,13 @@ DialogEmbed::DialogEmbed(QWidget *parent) :
     ui->embedButton->setIconSize(iconSize);
 
     huffmanEncoding = new HuffmanEncoding();
+    connect(huffmanEncoding, &HuffmanEncoding::started, this, [this] {
+        ui->progressBar->setHidden(false);
+    });
+
+    connect(huffmanEncoding, &HuffmanEncoding::finished, this, [this] {
+        ui->progressBar->setHidden(true);
+    });
 
     connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
     connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
