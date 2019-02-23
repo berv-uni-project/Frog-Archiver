@@ -1,20 +1,20 @@
-#include "dialogembed.h"
-#include "ui_dialogembed.h"
-#include <QFileDialog>
-#include <QFile>
+#include "compresswindow.h"
+#include "ui_compresswindow.h"
 
-DialogEmbed::DialogEmbed(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DialogEmbed)
+#include <QFileDialog>
+
+CompressWindow::CompressWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::CompressWindow)
 {
     ui->setupUi(this);
     ui->progressBar->setHidden(true);
 
     QSize iconSize = QSize (fontMetrics().height(), fontMetrics().height());
-
-    ui->addFilesBUtton->setIconSize(iconSize);
-    ui->clearButton->setIcon(style()->standardIcon(QStyle::SP_DialogDiscardButton));
-    ui->clearButton->setIconSize(iconSize);
+    ui->addFilesButton->setIcon(style()->standardIcon(QStyle::SP_FileIcon));
+    ui->addFilesButton->setIconSize(iconSize);
+    ui->clearListButton->setIcon(style()->standardIcon(QStyle::SP_DialogDiscardButton));
+    ui->clearListButton->setIconSize(iconSize);
     ui->embedButton->setIcon(style()->standardIcon(QStyle::SP_DialogSaveButton));
     ui->embedButton->setIconSize(iconSize);
 
@@ -29,28 +29,29 @@ DialogEmbed::DialogEmbed(QWidget *parent) :
 
     connect(huffmanEncoding, SIGNAL(progressChanged(QString)),ui->textEdit, SLOT(append(QString)));
     connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar, SLOT(setValue(int)));
-    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->clearButton, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->clearListButton, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->embedButton, SLOT(setEnabled(bool)));
-    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->addFilesBUtton, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->addFilesButton, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->listWidget, SLOT(setEnabled(bool)));
-    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->saveAsButton, SLOT(setEnabled(bool)));
+    connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->saveLocation, SLOT(setEnabled(bool)));
 }
 
-DialogEmbed::~DialogEmbed()
+CompressWindow::~CompressWindow()
 {
     delete ui;
+    delete huffmanEncoding;
 }
 
-void DialogEmbed::disabledButton()
+void CompressWindow::disabledButton()
 {
-    ui->clearButton->setDisabled(true);
+    ui->clearListButton->setDisabled(true);
     ui->embedButton->setDisabled(true);
-    ui->addFilesBUtton->setDisabled(true);
+    ui->addFilesButton->setDisabled(true);
     ui->listWidget->setDisabled(true);
-    ui->saveAsButton->setDisabled(true);
+    ui->saveLocation->setDisabled(true);
 }
 
-void DialogEmbed::on_addFilesBUtton_clicked()
+void CompressWindow::on_addFilesBUtton_clicked()
 {
     ui->progressBar->setValue(0);
     //Select Files
@@ -74,7 +75,7 @@ void DialogEmbed::on_addFilesBUtton_clicked()
     }
 }
 
-void DialogEmbed::on_saveAsButton_clicked()
+void CompressWindow::on_saveAsButton_clicked()
 {
     QString outputfile = QFileDialog::getSaveFileName(this,
                                                       tr("Location to Compress"),
@@ -88,18 +89,18 @@ void DialogEmbed::on_saveAsButton_clicked()
         if (!outputfile.endsWith(".frog")) {
             outputfile.append(".frog");
         }
-        ui->saveAsText->setText(outputfile);
+        ui->saveLocation->setText(outputfile);
     }
 }
 
-void DialogEmbed::on_clearButton_clicked()
+void CompressWindow::on_clearButton_clicked()
 {
     ui->listWidget->clear();
 }
 
-void DialogEmbed::on_embedButton_clicked()
+void CompressWindow::on_embedButton_clicked()
 {
-    if (ui->listWidget->count() > 0 && ui->saveAsText->text().length() > 0) {
+    if (ui->listWidget->count() > 0 && ui->saveLocation->text().length() > 0) {
         // Disabled Button
         disabledButton();
 
@@ -122,7 +123,7 @@ void DialogEmbed::on_embedButton_clicked()
         //Starting
         ui->textEdit->append("Compressing...");
         huffmanEncoding->setInputFile(list);
-        huffmanEncoding->setOutputFile(ui->saveAsText->text());
+        huffmanEncoding->setOutputFile(ui->saveLocation->text());
         huffmanEncoding->setTotalSize(totalsize);
         huffmanEncoding->start();
     } else {

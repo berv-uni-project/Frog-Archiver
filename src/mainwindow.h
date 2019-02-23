@@ -15,6 +15,7 @@
 #include <QShortcut>
 #include <stdint.h>
 #include "about.h"
+#include "compresswindow.h"
 #include "extractwindow.h"
 #include "huffmandecoding.h"
 #include "huffmanencoding.h"
@@ -56,6 +57,7 @@ private:
     Ui::MainWindow *ui;
     About *aboutwindow;
     ExtractWindow *extractWindow;
+    CompressWindow *compressWindow;
 };
 
 #endif // MAINWINDOW_H

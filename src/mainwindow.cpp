@@ -1,7 +1,6 @@
 #include "license.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "dialogembed.h"
 #include "extractwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -14,12 +13,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->buttonCompress->setIconSize(iconSize);
     ui->buttonExtract->setIconSize(iconSize);
     extractWindow = new ExtractWindow(this);
+    compressWindow = new CompressWindow(this);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     delete extractWindow;
+    delete compressWindow;
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -47,10 +48,8 @@ void MainWindow::Extract()
 
 void MainWindow::Compress()
 {
-    DialogEmbed dialogEmbed;
-    dialogEmbed.setModal(true);
-    dialogEmbed.setWindowFlags(Qt::Window);
-    dialogEmbed.exec();
+    compressWindow->show();
+    this->hide();
 }
 
 void MainWindow::on_actionExtract_triggered()
