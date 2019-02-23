@@ -22,6 +22,8 @@ jobs:
       - make
     - stage: docs
       language: node_js
+      node_js:
+      - "10"
       before_install:
       - yarn install
       script:
