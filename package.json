@@ -1,0 +1,17 @@
+{
+  "name": "Frog-Archiver",
+  "version": "1.0.0",
+  "description": "Frog Archiver",
+  "main": "index.js",
+  "repository": "https://github.com/berv-uni-project/Frog-Archiver",
+  "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "vuepress": "^0.14.9"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}

@@ -1,6 +1,0 @@
-{
-  "name": "Frog-archiver",
-  "tagline": "Frog Archiver is compression tools for any files you have.",
-  "body": "# Frog-Archiver\r\n\r\nFrog Archiver is compression tools for any files you have.\r\n\r\n## Frog Archiver v.0.0\r\n\r\n### How to Run?\r\n\r\nFor Windows :\r\n* Take your binary version with library dependency.\r\n* Run it.\r\n \r\nFor Linux :\r\n* You must import the project to Qt GUI and build manually.\r\n\r\n### How to Build?\r\n\r\n1. Make sure you have Qt Creator\r\n2. Open FrogArchiver.pro with Qt Creator (You can found in [src](/src/)).\r\n3. Build\r\n4. To run it with double click, you must complete the binary version with qt library.\r\n\r\n### Created by :\r\n\r\n* Adam Rotal Yuliandaru\r\n* Ade Surya Ramadhani\r\n* Bervianto Leo Pratama\r\n\r\n\r\n### Watch Demo Here\r\n\r\nLink : [https://youtu.be/THsPWMalRmM](https://youtu.be/THsPWMalRmM)\r\n\r\n---\r\n\r\nSome source code modified from this source code : [Link](http://code.activestate.com/recipes/577480-huffman-data-compression/)\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
