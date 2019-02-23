@@ -15,6 +15,7 @@
 #include <QShortcut>
 #include <stdint.h>
 #include "about.h"
+#include "extractwindow.h"
 #include "huffmandecoding.h"
 #include "huffmanencoding.h"
 
@@ -37,8 +38,6 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void on_textEdit_textChanged();
-
     void on_actionCompress_triggered();
 
     void on_actionExtract_triggered();
@@ -53,16 +52,10 @@ private slots:
 
     void on_buttonCompress_clicked();
 
-    // void DeleteItem();
-
-    void on_addButton_clicked();
-
 private:
     Ui::MainWindow *ui;
     About *aboutwindow;
-    HuffmanEncoding *huffmanEncoding;
-    HuffmanDecoding *huffmanDecoding;
-    // QShortcut* shortcut;
+    ExtractWindow *extractWindow;
 };
 
 #endif // MAINWINDOW_H

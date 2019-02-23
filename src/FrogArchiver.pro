@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     huffmanencoding.cpp \
     huffmandecoding.cpp \
     license.cpp \
-    dialogembed.cpp
+    dialogembed.cpp \
+    extractwindow.cpp
 
 HEADERS  += mainwindow.h \
     about.h \
@@ -27,12 +28,14 @@ HEADERS  += mainwindow.h \
     huffmanencoding.h \
     huffmandecoding.h \
     license.h \
-    dialogembed.h
+    dialogembed.h \
+    extractwindow.h
 
 FORMS    += mainwindow.ui \
     about.ui \
     license.ui \
-    dialogembed.ui
+    compress-window.ui \
+    extractwindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11
 
