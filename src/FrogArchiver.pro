@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     huffmanencoding.cpp \
     huffmandecoding.cpp \
     license.cpp \
-    dialogembed.cpp
+    extractwindow.cpp \
+    compresswindow.cpp
 
 HEADERS  += mainwindow.h \
     about.h \
@@ -27,15 +28,19 @@ HEADERS  += mainwindow.h \
     huffmanencoding.h \
     huffmandecoding.h \
     license.h \
-    dialogembed.h
+    extractwindow.h \
+    compresswindow.h
 
 FORMS    += mainwindow.ui \
     about.ui \
     license.ui \
-    dialogembed.ui
+    extractwindow.ui \
+    compresswindow.ui
 
 QMAKE_CXXFLAGS += -std=c++11
 
 RESOURCES += FrogArchiver.qrc
 
-DISTFILES +=
+DISTFILES += \
+    config/config.xml \
+    packages/org.berviantoleo.frogarchiver/packages.xml

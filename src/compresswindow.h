@@ -1,20 +1,22 @@
-#ifndef DIALOGEMBED_H
-#define DIALOGEMBED_H
+#ifndef COMPRESSWINDOW_H
+#define COMPRESSWINDOW_H
 
-#include <QDialog>
 #include "huffmanencoding.h"
 
+#include <QMainWindow>
+
 namespace Ui {
-class DialogEmbed;
+class CompressWindow;
 }
 
-class DialogEmbed : public QDialog
+class CompressWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit DialogEmbed(QWidget *parent = nullptr);
-    ~DialogEmbed();
+    explicit CompressWindow(QWidget *parent = nullptr);
+    ~CompressWindow();
+
 
 private slots:
     void on_addFilesBUtton_clicked();
@@ -26,9 +28,9 @@ private slots:
     void on_embedButton_clicked();
 
 private:
-    Ui::DialogEmbed *ui;
+    Ui::CompressWindow *ui;
     HuffmanEncoding *huffmanEncoding;
     void disabledButton();
 };
 
-#endif // DIALOGEMBED_H
+#endif // COMPRESSWINDOW_H

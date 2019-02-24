@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Frog Archiver</DisplayName>
+    <Description>Main Application of Frog Achiver</Description>
+    <Version>1</Version>
+    <ReleaseDate>2019-02-23</ReleaseDate>
+    <Licenses>
+        <License name="GNU LESSER GENERAL PUBLIC LICENSE Version 3" file="LICENSE" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <UserInterfaces>
+        <UserInterface>page.ui</UserInterface>
+    </UserInterfaces>
+</Package>
