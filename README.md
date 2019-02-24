@@ -35,17 +35,17 @@ Linux Version: [https://youtu.be/NKV_E7RWcxo](https://youtu.be/NKV_E7RWcxo)
 
 ![About](screenshot/windows/about.png)
 
-![License](screenshot/windows/license.PNG)
+![License](screenshot/windows/license.png)
 
 ![Compressing](screenshot/windows/compressing.png)
 
 ![Extract](screenshot/windows/extract.png)
 
-### How to Run?
+### How to Run
 
 Download in Release Page.
 
-### How to Build?
+### How to Build
 
 1. Make sure you have Qt Creator
 2. Open FrogArchiver.pro with Qt Creator (You can found in [src](/src/)).
