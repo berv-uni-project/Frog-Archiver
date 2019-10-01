@@ -3,19 +3,19 @@
 
 #include "huffmandecoding.h"
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
 class ExtractWindow;
 }
 
-class ExtractWindow : public QMainWindow
+class ExtractWindow : public QDialog
 {
     Q_OBJECT
 
 public:
     explicit ExtractWindow(QWidget *parent = nullptr);
-    ~ExtractWindow();
+    ~ExtractWindow() override;
     void Extract();
 
 private slots:
@@ -24,6 +24,8 @@ private slots:
     void on_outputDirButton_clicked();
 
     void on_extractButton_clicked();
+protected:
+    void showEvent(QShowEvent *) override;
 
 private:
     Ui::ExtractWindow *ui;
