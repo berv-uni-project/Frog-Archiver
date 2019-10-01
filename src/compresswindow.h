@@ -3,13 +3,13 @@
 
 #include "huffmanencoding.h"
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
 class CompressWindow;
 }
 
-class CompressWindow : public QMainWindow
+class CompressWindow : public QDialog
 {
     Q_OBJECT
 
@@ -19,14 +19,15 @@ public:
 
 
 private slots:
-    void on_addFilesBUtton_clicked();
+    void on_addFilesButton_clicked();
 
     void on_saveAsButton_clicked();
 
-    void on_clearButton_clicked();
+    void on_clearListButton_clicked();
 
     void on_embedButton_clicked();
-
+protected:
+    void showEvent(QShowEvent *) override;
 private:
     Ui::CompressWindow *ui;
     HuffmanEncoding *huffmanEncoding;

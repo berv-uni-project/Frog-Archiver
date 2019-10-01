@@ -28,7 +28,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     void Compress();
     void Extract();
 
@@ -43,9 +43,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    About *aboutwindow;
+    CompressWindow *compressWindow = nullptr;
     ExtractWindow *extractWindow;
-    CompressWindow *compressWindow;
 };
 
 #endif // MAINWINDOW_H

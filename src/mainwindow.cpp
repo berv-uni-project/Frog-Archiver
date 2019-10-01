@@ -6,6 +6,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
+    , compressWindow(new CompressWindow(this))
 {
     ui->setupUi(this);
 
@@ -13,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->buttonCompress->setIconSize(iconSize);
     ui->buttonExtract->setIconSize(iconSize);
     extractWindow = new ExtractWindow(this);
-    compressWindow = new CompressWindow(this);
 
     ui->mainToolBar->addAction(ui->actionCompress);
     connect(ui->actionCompress, &QAction::triggered, this, &MainWindow::Compress);
@@ -28,7 +28,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete extractWindow;
-    delete compressWindow;
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -52,7 +51,6 @@ void MainWindow::Extract()
 void MainWindow::Compress()
 {
     compressWindow->show();
-    this->hide();
 }
 
 void MainWindow::on_actionLicense_triggered()
