@@ -23,12 +23,6 @@
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="3" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QPushButton" name="buttonCompress">
-        <property name="maximumSize">
-         <size>
-          <width>87</width>
-          <height>24</height>
-         </size>
-        </property>
         <property name="text">
          <string>Compress</string>
         </property>
@@ -40,12 +34,6 @@
       </item>
       <item row="3" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QPushButton" name="buttonExtract">
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>24</height>
-         </size>
-        </property>
         <property name="text">
          <string>Extract</string>
         </property>
