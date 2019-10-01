@@ -39,19 +39,7 @@ private slots:
 
     void on_actionAbout_triggered();
 
-    void on_actionCompress_triggered();
-
-    void on_actionExtract_triggered();
-
-    void on_actionCompressButton_triggered();
-
-    void on_actionExtractButton_triggered();
-
     void on_actionLicense_triggered();
-
-    void on_buttonExtract_clicked();
-
-    void on_buttonCompress_clicked();
 
 private:
     Ui::MainWindow *ui;

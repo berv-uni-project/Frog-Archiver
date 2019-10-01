@@ -65,7 +65,7 @@
      <x>0</x>
      <y>0</y>
      <width>530</width>
-     <height>21</height>
+     <height>44</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -95,8 +95,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionCompressButton"/>
-   <addaction name="actionExtractButton"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAbout">
