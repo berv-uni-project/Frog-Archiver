@@ -44,7 +44,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     CompressWindow *compressWindow = nullptr;
-    ExtractWindow *extractWindow;
+    ExtractWindow *extractWindow = nullptr;
 };
 
 #endif // MAINWINDOW_H

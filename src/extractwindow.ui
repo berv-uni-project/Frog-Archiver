@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ExtractWindow</class>
- <widget class="QMainWindow" name="ExtractWindow">
+ <widget class="QDialog" name="ExtractWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,127 +11,103 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Extract</string>
+   <string>Frog Archiver - Extract</string>
   </property>
   <property name="windowIcon">
    <iconset resource="FrogArchiver.qrc">
     <normaloff>:/assets/frog_mac_archigraphs.png</normaloff>:/assets/frog_mac_archigraphs.png</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Input Frog File</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="inputFile">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="inputButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(237, 212, 0);</string>
-      </property>
-      <property name="text">
-       <string>Select .frog File</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Output Directory</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="extractPosition">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="outputDirButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(237, 212, 0);</string>
-      </property>
-      <property name="text">
-       <string>Select Output Directory</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Status</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(78, 154, 6);</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="extractButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(138, 226, 52);</string>
-      </property>
-      <property name="text">
-       <string>Extract</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QProgressBar" name="progressBar">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="value">
-       <number>24</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-    <addaction name="actionExtract"/>
-    <addaction name="actionExit"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionabout"/>
-   </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuAbout"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Input Frog File</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="inputFile">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="inputButton">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(237, 212, 0);</string>
+       </property>
+       <property name="text">
+        <string>Select .frog File</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Output Directory</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="extractPosition">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="outputDirButton">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(237, 212, 0);</string>
+       </property>
+       <property name="text">
+        <string>Select Output Directory</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Status</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(78, 154, 6);</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="extractButton">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(138, 226, 52);</string>
+       </property>
+       <property name="text">
+        <string>Extract</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
