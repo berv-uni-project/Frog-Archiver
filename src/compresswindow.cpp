@@ -4,11 +4,11 @@
 #include <QFileDialog>
 
 CompressWindow::CompressWindow(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::CompressWindow)
 {
     ui->setupUi(this);
-    ui->progressBar->setHidden(true);
+    setModal(true);
 
     QSize iconSize = QSize (fontMetrics().height(), fontMetrics().height());
     ui->addFilesButton->setIcon(style()->standardIcon(QStyle::SP_FileIcon));
@@ -35,7 +35,16 @@ CompressWindow::CompressWindow(QWidget *parent) :
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->listWidget, SLOT(setEnabled(bool)));
     connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->saveLocation, SLOT(setEnabled(bool)));
 }
-
+void CompressWindow::showEvent(QShowEvent *)
+{
+    if(!huffmanEncoding->isRunning()) {
+        ui->progressBar->setHidden(true);
+        ui->progressBar->setValue(0);
+        ui->textEdit->clear();
+        ui->listWidget->clear();
+        ui->saveLocation->clear();
+    }
+}
 CompressWindow::~CompressWindow()
 {
     delete ui;
@@ -51,7 +60,7 @@ void CompressWindow::disabledButton()
     ui->saveLocation->setDisabled(true);
 }
 
-void CompressWindow::on_addFilesBUtton_clicked()
+void CompressWindow::on_addFilesButton_clicked()
 {
     ui->progressBar->setValue(0);
     //Select Files
@@ -78,7 +87,7 @@ void CompressWindow::on_addFilesBUtton_clicked()
 void CompressWindow::on_saveAsButton_clicked()
 {
     QString outputfile = QFileDialog::getSaveFileName(this,
-                                                      tr("Location to Compress"),
+                                                      tr("Save As"),
                                                       QString(),
                                                       tr("Frog File (*.frog)"));
     if (outputfile.isNull() || outputfile.isEmpty()) // Cancel
@@ -93,7 +102,7 @@ void CompressWindow::on_saveAsButton_clicked()
     }
 }
 
-void CompressWindow::on_clearButton_clicked()
+void CompressWindow::on_clearListButton_clicked()
 {
     ui->listWidget->clear();
 }
