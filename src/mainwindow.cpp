@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete compressWindow;
+    delete extractWindow;
     delete ui;
 }
 
