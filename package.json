@@ -1,6 +1,6 @@
 {
-  "name": "Frog-Archiver",
-  "version": "1.0.0",
+  "name": "frog-archiver",
+  "version": "2.0.0",
   "description": "Frog Archiver",
   "main": "index.js",
   "repository": "https://github.com/berv-uni-project/Frog-Archiver",
