@@ -24,10 +24,7 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2.8.0
-      
-      - name: Change Directory
-        run: cd src/
-      
+            
       - name: Build Qt
-        run: qmake FrogArchiver.pro CONFIG+=release 
+        run: qmake -project && qmake src/FrogArchiver.pro CONFIG+=release && make
           
