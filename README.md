@@ -1,12 +1,18 @@
 # Frog-Archiver
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d3894185a1144241820b338aff9cf803)](https://app.codacy.com/app/berviantoleo/Frog-Archiver?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/Frog-Archiver&utm_campaign=Badge_Grade_Settings)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver?ref=badge_shield)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d3894185a1144241820b338aff9cf803)](https://app.codacy.com/app/berviantoleo/Frog-Archiver?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/Frog-Archiver&utm_campaign=Badge_Grade_Settings)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver?ref=badge_shield)
 
-[![Build Status](https://travis-ci.org/berv-uni-project/Frog-Archiver.svg?branch=develop)](https://travis-ci.org/berv-uni-project/Frog-Archiver)
 
 Frog Archiver is compression tools for any files you have.
 
 ## Frog Archiver v.1.0
+
+### Build Status
+
+| Travis | Github Action |
+|:-------|:---:|
+| [![Build Status](https://travis-ci.com/berv-uni-project/Frog-Archiver.svg?branch=develop)](https://travis-ci.com/berv-uni-project/Frog-Archiver) | ![CI](https://github.com/berv-uni-project/Frog-Archiver/workflows/CI/badge.svg) |
 
 ### Watch Demo Here
 
