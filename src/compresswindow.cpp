@@ -67,7 +67,7 @@ void CompressWindow::on_addFilesButton_clicked()
     QStringList files = QFileDialog::getOpenFileNames(
                 this,
                 "Files to Compress",
-                "C://",
+                QDir::homePath(),
                 "All Files (*.*)");
     QStringList list = files;
     QStringList::Iterator it = list.begin();
