@@ -69,15 +69,14 @@ void CompressWindow::on_addFilesButton_clicked()
                 "Files to Compress",
                 "C://",
                 "All Files (*.*)");
-    QStringList list = files;
-    QStringList::Iterator it = list.begin();
+    QStringList::Iterator it = files.begin();
     //Proccessing List
-    if (it==list.end()) //Cancel or no files
+    if (it==files.end()) //Cancel or no files
     {
         ui->textEdit->setText("Operation Canceled.");
     } else
     {
-        while(it != list.end()) {
+        while(it != files.end()) {
             ui->listWidget->addItem(*it);
             ++it;
         }
