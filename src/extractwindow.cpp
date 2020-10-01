@@ -62,7 +62,7 @@ void ExtractWindow::on_inputButton_clicked()
     QString filename=QFileDialog::getOpenFileName (
                 this,
                 tr("Open File to Extract..."),
-                "C://",
+                QDir::homePath(),
                 "Frog File (*.frog)"
                 );
     if (filename.isEmpty()) //Cancel Open File
@@ -75,7 +75,7 @@ void ExtractWindow::on_outputDirButton_clicked()
 {
     QString outputdir = QFileDialog::getExistingDirectory(this,
                                                           tr("Choose Directory to Extract"),
-                                                          "C:\\");
+                                                          QDir::homePath());
     if (outputdir.isEmpty())
         ui->textEdit->setText("Operation Canceled");
     else
