@@ -44,11 +44,7 @@ void ExtractWindow::Extract() {
     ui->progressBar->setValue(0);
     QString filename = ui->inputFile->text();
     QString output = ui->extractPosition->text();
-    if (filename.isEmpty() && output.isEmpty()) //Cancel Open File
-    {
-        ui->textEdit->setText("Operation Canceled");
-    } else //Open File
-    {
+    if (!filename.isEmpty() && !output.isEmpty()) {
         ui->textEdit->setText("");
         huffmanDecoding->setInputFile(filename);
         huffmanDecoding->setOutputFile(output);
@@ -65,9 +61,7 @@ void ExtractWindow::on_inputButton_clicked()
                 QDir::homePath(),
                 "Frog File (*.frog)"
                 );
-    if (filename.isEmpty()) //Cancel Open File
-        ui->textEdit->setText("Operation Canceled");
-    else //Open File
+    if (!filename.isEmpty())
         ui->inputFile->setText(filename);
 }
 
@@ -76,9 +70,7 @@ void ExtractWindow::on_outputDirButton_clicked()
     QString outputdir = QFileDialog::getExistingDirectory(this,
                                                           tr("Choose Directory to Extract"),
                                                           QDir::homePath());
-    if (outputdir.isEmpty())
-        ui->textEdit->setText("Operation Canceled");
-    else
+    if (!outputdir.isEmpty())
         ui->extractPosition->setText(outputdir);
 }
 
