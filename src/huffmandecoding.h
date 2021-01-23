@@ -11,46 +11,38 @@
 
 using namespace std;
 
-class HuffmanDecoding : public QThread
-{
-    Q_OBJECT
+class HuffmanDecoding : public QThread {
+  Q_OBJECT
 
 public:
-    HuffmanDecoding();
+  HuffmanDecoding();
 
-    void setInputFile(QString file) {
-        ifi = file;
-    }
+  void setInputFile(QString file) { ifi = file; }
 
-    void setOutputFile(QString output) {
-        directory = output;
-    }
+  void setOutputFile(QString output) { directory = output; }
 
-    void decoder();
+  void decoder();
 
-    void run() {
-        decoder();
-    }
+  void run() { decoder(); }
 
 private:
-    QList<double> ratat;
-    QList<double> entropit;
+  QList<double> ratat;
+  QList<double> entropit;
 
-    int64_t tempsize;
-    QString activefile;
+  int64_t tempsize;
+  QString activefile;
 
-    QString ifi;
-    QString directory;
+  QString ifi;
+  QString directory;
 
 private:
-    unsigned char huffman_read(ifstream& infile, int &bit_pos,unsigned char &temp_char);
-
+  unsigned char huffman_read(ifstream &infile, int &bit_pos,
+                             unsigned char &temp_char);
 
 signals:
-    void progressChanged(QString info);
-    void progressCounted(int progress);
-    void setEnabled(bool enable);
-
+  void progressChanged(QString info);
+  void progressCounted(int progress);
+  void setEnabled(bool enable);
 };
 
 #endif // HUFFMANDECODING_H
