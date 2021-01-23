@@ -1,13 +1,19 @@
 # Frog-Archiver
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d3894185a1144241820b338aff9cf803)](https://app.codacy.com/app/berviantoleo/Frog-Archiver?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/Frog-Archiver&utm_campaign=Badge_Grade_Settings)
-[![Build Status](https://travis-ci.org/berv-uni-project/Frog-Archiver.svg?branch=develop)](https://travis-ci.org/berv-uni-project/Frog-Archiver)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver?ref=badge_shield)
 
 Frog Archiver is compression tools for any files you have.
 
 [[toc]]
 
 ## Frog Archiver v.1.0
+
+### Build Status
+
+| Github Action |
+|:-------------:|
+| ![CI](https://github.com/berv-uni-project/Frog-Archiver/workflows/CI/badge.svg) |
 
 ### Watch Demo Here
 
@@ -53,8 +59,12 @@ Download in Release Page.
 
 1. Make sure you have Qt Creator
 2. Open FrogArchiver.pro with Qt Creator (You can found in [src](/src/)).
-3. Build / Run
-4. **(For build only)** To run it with double click, you must complete the binary version with qt library.
+3. Build
+4. To run it with double click, you must complete the binary version with qt library.
+
+Alternative
+
+3. Run
 
 ### Created by
 
@@ -67,3 +77,6 @@ Download in Release Page.
 ::: warning
 Some source code modified from this source code : [Link](http://code.activestate.com/recipes/577480-huffman-data-compression/)
 :::
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver?ref=badge_large)

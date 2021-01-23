@@ -10,9 +10,9 @@ Frog Archiver is compression tools for any files you have.
 
 ### Build Status
 
-| Travis | Github Action |
-|:-------|:---:|
-| [![Build Status](https://travis-ci.com/berv-uni-project/Frog-Archiver.svg?branch=develop)](https://travis-ci.com/berv-uni-project/Frog-Archiver) | ![CI](https://github.com/berv-uni-project/Frog-Archiver/workflows/CI/badge.svg) |
+| Github Action |
+|:-------------:|
+| ![CI](https://github.com/berv-uni-project/Frog-Archiver/workflows/CI/badge.svg) |
 
 ### Watch Demo Here
 
