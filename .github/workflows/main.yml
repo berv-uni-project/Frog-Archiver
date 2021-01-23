@@ -21,7 +21,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2.8.0
+        uses: jurplel/install-qt-action@v2
       - name: Build Qt
         run: qmake -project && qmake src/FrogArchiver.pro CONFIG+=release && make
   docs:
