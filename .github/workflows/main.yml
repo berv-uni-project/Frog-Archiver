@@ -36,6 +36,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn docs:build
+        env:
+          BASE_URL: '/Frog-Archiver/'
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
