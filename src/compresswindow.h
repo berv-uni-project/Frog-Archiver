@@ -16,13 +16,9 @@ public:
   ~CompressWindow();
 
 private slots:
-  void on_addFilesButton_clicked();
-
-  void on_saveAsButton_clicked();
-
-  void on_clearListButton_clicked();
-
-  void on_embedButton_clicked();
+  void addFiles();
+  void saveAs();
+  void compress();
 
 protected:
   void showEvent(QShowEvent *) override;

@@ -20,6 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
   ui->mainToolBar->addAction(ui->actionExtract);
   connect(ui->actionExtract, &QAction::triggered, this, &MainWindow::Extract);
   connect(ui->buttonExtract, &QPushButton::pressed, this, &MainWindow::Extract);
+
+  connect(ui->actionExit, &QAction::triggered, this, &QApplication::quit);
+  connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::showAbout);
+  connect(ui->actionLicense, &QAction::triggered, this, &MainWindow::showLicense);
 }
 
 MainWindow::~MainWindow() {
@@ -28,9 +32,7 @@ MainWindow::~MainWindow() {
   delete ui;
 }
 
-void MainWindow::on_actionExit_triggered() { QApplication::quit(); }
-
-void MainWindow::on_actionAbout_triggered() {
+void MainWindow::showAbout() {
   About Ab1;
   Ab1.setModal(true);
   Ab1.exec();
@@ -40,7 +42,7 @@ void MainWindow::Extract() { extractWindow->show(); }
 
 void MainWindow::Compress() { compressWindow->show(); }
 
-void MainWindow::on_actionLicense_triggered() {
+void MainWindow::showLicense() {
   License license;
   license.setModal(true);
   license.exec();
