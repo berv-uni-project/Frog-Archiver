@@ -1,0 +1,236 @@
+\hypertarget{classTree}{}\doxysection{Tree Class Reference}
+\label{classTree}\index{Tree@{Tree}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTree_a55283dae9a948e35710b577b7cff40bc}\label{classTree_a55283dae9a948e35710b577b7cff40bc}} 
+const \mbox{\hyperlink{classTree}{Tree}} \& {\bfseries operator=} (const \mbox{\hyperlink{classTree}{Tree}} \&)
+\item 
+\mbox{\Hypertarget{classTree_ae233dd96cd787636bc67047d945c009a}\label{classTree_ae233dd96cd787636bc67047d945c009a}} 
+void {\bfseries destroy} (Node $\ast$N)
+\item 
+\mbox{\Hypertarget{classTree_ae984c40b541532658d9f6e7454a3b232}\label{classTree_ae984c40b541532658d9f6e7454a3b232}} 
+unsigned int {\bfseries get\+\_\+freq} () const
+\item 
+\mbox{\Hypertarget{classTree_a2ce0572b1d70f1efb9fa14f6b7b4b825}\label{classTree_a2ce0572b1d70f1efb9fa14f6b7b4b825}} 
+unsigned char {\bfseries get\+\_\+char} () const
+\item 
+\mbox{\Hypertarget{classTree_a49d6d1ebde46b076a9ee280601d7318d}\label{classTree_a49d6d1ebde46b076a9ee280601d7318d}} 
+void {\bfseries set\+\_\+freq} (unsigned int f)
+\item 
+\mbox{\Hypertarget{classTree_a2f213df32526f6beb8bb19350909ea0f}\label{classTree_a2f213df32526f6beb8bb19350909ea0f}} 
+void {\bfseries set\+\_\+char} (unsigned char c)
+\item 
+Node $\ast$ \mbox{\hyperlink{classTree_aaa7f1e1d7fd83194ee1ae0b985136e33}{get\+\_\+root}} () const
+\item 
+Node $\ast$ \mbox{\hyperlink{classTree_a2fdcbf6f1f70628d800e277a807c265e}{get\+\_\+left}} () const
+\item 
+Node $\ast$ \mbox{\hyperlink{classTree_a15b2698b11c566699fe95fc19b6c41a2}{get\+\_\+right}} () const
+\item 
+void \mbox{\hyperlink{classTree_a13e04f4f196e64b525570c9e88244058}{set\+\_\+left}} (Node $\ast$N)
+\item 
+void \mbox{\hyperlink{classTree_a4d49ee95e181cd23b910c183030c7aab}{set\+\_\+right}} (Node $\ast$N)
+\item 
+bool \mbox{\hyperlink{classTree_a551fd18ab0ccd4cbf3868f4d449688a4}{operator==}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+bool \mbox{\hyperlink{classTree_ad82d9e74de1ac4fe561c1c140b1259a6}{operator!=}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+bool \mbox{\hyperlink{classTree_a7d4985990031db032d7821d810a697c9}{operator$<$}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+bool \mbox{\hyperlink{classTree_a92fda3b3d69ecafc72aeb9695a076d4b}{operator$<$=}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+bool \mbox{\hyperlink{classTree_ae18763c9962256c57aff569621c60999}{operator$>$}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+bool \mbox{\hyperlink{classTree_a6b32e0c8239ce44c4ce826807b791b2c}{operator$>$=}} (const \mbox{\hyperlink{classTree}{Tree}} \&T) const
+\item 
+void \mbox{\hyperlink{classTree_a9c5c1e0374e34b137943e52a33a7925b}{huffman}} (Node $\ast$N, unsigned char c, string str, string \&s) const
+\item 
+void \mbox{\hyperlink{classTree_a87e8436d9616cb8f639b3a518231c70c}{huffman\+\_\+list}} (Node $\ast$N, string str) const
+\item 
+bool \mbox{\hyperlink{classTree_a099ecba4286f020cd476e006a9f3c1c1}{get\+\_\+huf\+\_\+char}} (string str, unsigned char \&c) const
+\item 
+string \mbox{\hyperlink{classTree_ab58f95964d2d44d0f7d4b65df8153221}{print\+\_\+char}} (Node $\ast$N) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTree_a152d8f14d808dfc8e6104087de133983}\label{classTree_a152d8f14d808dfc8e6104087de133983}} 
+void {\bfseries decoder} ()
+\item 
+\mbox{\Hypertarget{classTree_a7941cfd6c0d65dd0d7dc80172fd9c47c}\label{classTree_a7941cfd6c0d65dd0d7dc80172fd9c47c}} 
+void {\bfseries encoder} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTree_a099ecba4286f020cd476e006a9f3c1c1}\label{classTree_a099ecba4286f020cd476e006a9f3c1c1}} 
+\index{Tree@{Tree}!get\_huf\_char@{get\_huf\_char}}
+\index{get\_huf\_char@{get\_huf\_char}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{get\_huf\_char()}{get\_huf\_char()}}
+{\footnotesize\ttfamily bool Tree\+::get\+\_\+huf\+\_\+char (\begin{DoxyParamCaption}\item[{string}]{str,  }\item[{unsigned char \&}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checking a character is in a tree. To get char equivalent of a Huffman string jika ada. 
+\begin{DoxyParams}{Parameters}
+{\em str} & respective tree \\
+\hline
+{\em c} & a char to be finded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+indicate found or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTree_a2fdcbf6f1f70628d800e277a807c265e}\label{classTree_a2fdcbf6f1f70628d800e277a807c265e}} 
+\index{Tree@{Tree}!get\_left@{get\_left}}
+\index{get\_left@{get\_left}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{get\_left()}{get\_left()}}
+{\footnotesize\ttfamily Node$\ast$ Tree\+::get\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter. Getting left of tree. \mbox{\Hypertarget{classTree_a15b2698b11c566699fe95fc19b6c41a2}\label{classTree_a15b2698b11c566699fe95fc19b6c41a2}} 
+\index{Tree@{Tree}!get\_right@{get\_right}}
+\index{get\_right@{get\_right}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{get\_right()}{get\_right()}}
+{\footnotesize\ttfamily Node$\ast$ Tree\+::get\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter. Getting right of tree. \mbox{\Hypertarget{classTree_aaa7f1e1d7fd83194ee1ae0b985136e33}\label{classTree_aaa7f1e1d7fd83194ee1ae0b985136e33}} 
+\index{Tree@{Tree}!get\_root@{get\_root}}
+\index{get\_root@{get\_root}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{get\_root()}{get\_root()}}
+{\footnotesize\ttfamily Node$\ast$ Tree\+::get\+\_\+root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter. Get root of tree. \mbox{\Hypertarget{classTree_a9c5c1e0374e34b137943e52a33a7925b}\label{classTree_a9c5c1e0374e34b137943e52a33a7925b}} 
+\index{Tree@{Tree}!huffman@{huffman}}
+\index{huffman@{huffman}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{huffman()}{huffman()}}
+{\footnotesize\ttfamily void Tree\+::huffman (\begin{DoxyParamCaption}\item[{Node $\ast$}]{N,  }\item[{unsigned char}]{c,  }\item[{string}]{str,  }\item[{string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+get Huffman string of a char. 
+\begin{DoxyParams}{Parameters}
+{\em N} & huffman list. \\
+\hline
+{\em c} & a char will be placed \\
+\hline
+{\em str} & kind of string to be replaced \\
+\hline
+{\em s} & output into a string that already placed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a87e8436d9616cb8f639b3a518231c70c}\label{classTree_a87e8436d9616cb8f639b3a518231c70c}} 
+\index{Tree@{Tree}!huffman\_list@{huffman\_list}}
+\index{huffman\_list@{huffman\_list}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{huffman\_list()}{huffman\_list()}}
+{\footnotesize\ttfamily void Tree\+::huffman\+\_\+list (\begin{DoxyParamCaption}\item[{Node $\ast$}]{N,  }\item[{string}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Print menjadi huffman list. outputs the Huffman char-\/string pairs list 
+\begin{DoxyParams}{Parameters}
+{\em N} & huffman list \\
+\hline
+{\em str} & based to be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_ad82d9e74de1ac4fe561c1c140b1259a6}\label{classTree_ad82d9e74de1ac4fe561c1c140b1259a6}} 
+\index{Tree@{Tree}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Tree\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of != 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a7d4985990031db032d7821d810a697c9}\label{classTree_a7d4985990031db032d7821d810a697c9}} 
+\index{Tree@{Tree}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Tree\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of $<$ 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a92fda3b3d69ecafc72aeb9695a076d4b}\label{classTree_a92fda3b3d69ecafc72aeb9695a076d4b}} 
+\index{Tree@{Tree}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Tree\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of $<$= 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a551fd18ab0ccd4cbf3868f4d449688a4}\label{classTree_a551fd18ab0ccd4cbf3868f4d449688a4}} 
+\index{Tree@{Tree}!operator==@{operator==}}
+\index{operator==@{operator==}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Tree\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of == 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_ae18763c9962256c57aff569621c60999}\label{classTree_ae18763c9962256c57aff569621c60999}} 
+\index{Tree@{Tree}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Tree\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of $>$ 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a6b32e0c8239ce44c4ce826807b791b2c}\label{classTree_a6b32e0c8239ce44c4ce826807b791b2c}} 
+\index{Tree@{Tree}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Tree\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTree}{Tree}} \&}]{T }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Override an operator of $>$= 
+\begin{DoxyParams}{Parameters}
+{\em T} & another tree to be differentiate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_ab58f95964d2d44d0f7d4b65df8153221}\label{classTree_ab58f95964d2d44d0f7d4b65df8153221}} 
+\index{Tree@{Tree}!print\_char@{print\_char}}
+\index{print\_char@{print\_char}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{print\_char()}{print\_char()}}
+{\footnotesize\ttfamily string Tree\+::print\+\_\+char (\begin{DoxyParamCaption}\item[{Node $\ast$}]{N }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Printing huffman tree 
+\begin{DoxyParams}{Parameters}
+{\em N} & main root of huffman tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string of tree structure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTree_a13e04f4f196e64b525570c9e88244058}\label{classTree_a13e04f4f196e64b525570c9e88244058}} 
+\index{Tree@{Tree}!set\_left@{set\_left}}
+\index{set\_left@{set\_left}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{set\_left()}{set\_left()}}
+{\footnotesize\ttfamily void Tree\+::set\+\_\+left (\begin{DoxyParamCaption}\item[{Node $\ast$}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter. Setting another pointer into left a tree 
+\begin{DoxyParams}{Parameters}
+{\em N} & another tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTree_a4d49ee95e181cd23b910c183030c7aab}\label{classTree_a4d49ee95e181cd23b910c183030c7aab}} 
+\index{Tree@{Tree}!set\_right@{set\_right}}
+\index{set\_right@{set\_right}!Tree@{Tree}}
+\doxysubsubsection{\texorpdfstring{set\_right()}{set\_right()}}
+{\footnotesize\ttfamily void Tree\+::set\+\_\+right (\begin{DoxyParamCaption}\item[{Node $\ast$}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter. Setting another pointer into right a tree 
+\begin{DoxyParams}{Parameters}
+{\em N} & another tree \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/huffmantree.\+h\end{DoxyCompactItemize}
