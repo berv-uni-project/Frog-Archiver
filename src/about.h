@@ -1,9 +1,7 @@
 /*  Nama File : about.h
     File kelas about dialog
 */
-
-#ifndef ABOUT_H
-#define ABOUT_H
+#pragma once
 
 #include <QDialog>
 
@@ -24,5 +22,3 @@ private slots:
 private:
   Ui::About *ui;
 };
-
-#endif // ABOUT_H

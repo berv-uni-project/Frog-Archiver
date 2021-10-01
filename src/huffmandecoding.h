@@ -1,5 +1,4 @@
-#ifndef HUFFMANDECODING_H
-#define HUFFMANDECODING_H
+#pragma once
 
 #include "huffmantree.h"
 #include "prioqueue.h"
@@ -44,5 +43,3 @@ signals:
   void progressCounted(int progress);
   void setEnabled(bool enable);
 };
-
-#endif // HUFFMANDECODING_H

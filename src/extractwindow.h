@@ -1,5 +1,4 @@
-#ifndef EXTRACTWINDOW_H
-#define EXTRACTWINDOW_H
+#pragma once
 
 #include "huffmandecoding.h"
 
@@ -31,5 +30,3 @@ private:
   Ui::ExtractWindow *ui;
   HuffmanDecoding *huffmanDecoding;
 };
-
-#endif // EXTRACTWINDOW_H

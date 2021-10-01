@@ -2,8 +2,7 @@
     Kelas interaksi utama Compress dan Decompress dengan Pengguna
 */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include "about.h"
 #include "compresswindow.h"
@@ -46,4 +45,3 @@ private:
   ExtractWindow *extractWindow = nullptr;
 };
 
-#endif // MAINWINDOW_H

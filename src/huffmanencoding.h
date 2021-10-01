@@ -1,5 +1,4 @@
-#ifndef HUFFMANENCODING_H
-#define HUFFMANENCODING_H
+#pragma once
 
 #include <QThread>
 #include <fstream>
@@ -42,5 +41,3 @@ signals:
   void progressCounted(int progress);
   void setEnabled(bool enable);
 };
-
-#endif // HUFFMANENCODING_H
