@@ -40,7 +40,7 @@ unsigned char HuffmanDecoding::huffman_read(ifstream &infile, int &bit_pos,
  * there is also event emitter
  */
 void HuffmanDecoding::decoder() {
-  QTime timer;
+  QElapsedTimer timer;
   timer.start();
   tempsize = 0;
   activefile = "";
