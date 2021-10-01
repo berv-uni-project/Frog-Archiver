@@ -6,7 +6,7 @@
 
 #include <QFileInfo>
 #include <QThread>
-#include <QTime>
+#include <QElapsedTimer>
 #include <fstream>
 
 using namespace std;

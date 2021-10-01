@@ -3,7 +3,7 @@
 #include "prioqueue.h"
 
 #include <QFileInfo>
-#include <QTime>
+#include <QElapsedTimer>
 #include <cmath>
 
 using namespace std;
@@ -52,7 +52,7 @@ void HuffmanEncoding::huffmanWrite(unsigned char c, ofstream &outfile) {
  * there is also event emitter
  */
 void HuffmanEncoding::encoder() {
-  QTime timer;
+  QElapsedTimer timer;
   timer.start();
   tempsize = 0;
   activefile = "";

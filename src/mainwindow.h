@@ -17,7 +17,7 @@
 #include <QShortcut>
 #include <QTextEdit>
 #include <QTextStream>
-#include <QTime>
+#include <QElapsedTimer>
 #include <stdint.h>
 
 namespace Ui {
