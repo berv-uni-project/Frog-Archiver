@@ -1,5 +1,4 @@
-#ifndef COMPRESSWINDOW_H
-#define COMPRESSWINDOW_H
+#pragma once
 
 #include "huffmanencoding.h"
 
@@ -33,5 +32,3 @@ private:
   HuffmanEncoding *huffmanEncoding;
   void disabledButton();
 };
-
-#endif // COMPRESSWINDOW_H

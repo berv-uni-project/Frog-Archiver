@@ -1,5 +1,4 @@
-#ifndef PRIOQUEUE_H
-#define PRIOQUEUE_H
+#pragma once
 
 #include <iostream>
 #include <stdlib.h>
@@ -147,5 +146,3 @@ template <class Type> void Queue<Type>::swap(Type *&a, Type *&b) {
   a = b;
   b = c;
 }
-
-#endif // PRIOQUEUE_H

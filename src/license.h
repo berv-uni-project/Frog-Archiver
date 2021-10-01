@@ -1,5 +1,4 @@
-#ifndef LICENSE_H
-#define LICENSE_H
+#pragma once
 
 #include <QDialog>
 
@@ -17,5 +16,3 @@ public:
 private:
   Ui::License *ui;
 };
-
-#endif // LICENSE_H

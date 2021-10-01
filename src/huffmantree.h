@@ -1,5 +1,4 @@
-#ifndef HUFFMANTREE_H
-#define HUFFMANTREE_H
+#pragma once
 
 #include <iostream>
 #include <stdio.h>
@@ -215,5 +214,3 @@ public:
     return str;
   }
 };
-
-#endif // HUFFMANTREE_H
