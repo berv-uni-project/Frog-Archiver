@@ -17,11 +17,8 @@ public:
   void Extract();
 
 private slots:
-  void on_inputButton_clicked();
-
-  void on_outputDirButton_clicked();
-
-  void on_extractButton_clicked();
+  void pickInputFile();
+  void pickOutputPath();
 
 protected:
   void showEvent(QShowEvent *) override;

@@ -7,6 +7,11 @@ ExtractWindow::ExtractWindow(QWidget *parent)
     : QDialog(parent), ui(new Ui::ExtractWindow) {
   ui->setupUi(this);
   setModal(true);
+
+  connect(ui->extractButton, &QPushButton::clicked, this, &ExtractWindow::Extract);
+  connect(ui->inputButton, &QPushButton::clicked, this, &ExtractWindow::pickInputFile);
+  connect(ui->outputDirButton, &QPushButton::clicked, this, &ExtractWindow::pickOutputPath);
+
   huffmanDecoding = new HuffmanDecoding();
   connect(huffmanDecoding, &HuffmanDecoding::started, this,
           [this] { ui->progressBar->setHidden(false); });
@@ -48,7 +53,7 @@ void ExtractWindow::Extract() {
   }
 }
 
-void ExtractWindow::on_inputButton_clicked() {
+void ExtractWindow::pickInputFile() {
   QString filename =
       QFileDialog::getOpenFileName(this, tr("Open File to Extract..."),
                                    QDir::homePath(), "Frog File (*.frog)");
@@ -56,11 +61,9 @@ void ExtractWindow::on_inputButton_clicked() {
     ui->inputFile->setText(filename);
 }
 
-void ExtractWindow::on_outputDirButton_clicked() {
+void ExtractWindow::pickOutputPath() {
   QString outputdir = QFileDialog::getExistingDirectory(
       this, tr("Choose Directory to Extract"), QDir::homePath());
   if (!outputdir.isEmpty())
     ui->extractPosition->setText(outputdir);
 }
-
-void ExtractWindow::on_extractButton_clicked() { Extract(); }

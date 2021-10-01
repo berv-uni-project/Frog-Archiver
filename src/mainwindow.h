@@ -33,11 +33,8 @@ public:
   ~MainWindow();
 
 private slots:
-  void on_actionExit_triggered();
-
-  void on_actionAbout_triggered();
-
-  void on_actionLicense_triggered();
+  void showAbout();
+  void showLicense();
 
 private:
   Ui::MainWindow *ui;
