@@ -24,20 +24,13 @@ CompressWindow::CompressWindow(QWidget *parent)
   connect(huffmanEncoding, &HuffmanEncoding::finished, this,
           [this] { ui->progressBar->setHidden(true); });
 
-  connect(huffmanEncoding, SIGNAL(progressChanged(QString)), ui->textEdit,
-          SLOT(append(QString)));
-  connect(huffmanEncoding, SIGNAL(progressCounted(int)), ui->progressBar,
-          SLOT(setValue(int)));
-  connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->clearListButton,
-          SLOT(setEnabled(bool)));
-  connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->embedButton,
-          SLOT(setEnabled(bool)));
-  connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->addFilesButton,
-          SLOT(setEnabled(bool)));
-  connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->listWidget,
-          SLOT(setEnabled(bool)));
-  connect(huffmanEncoding, SIGNAL(setEnabled(bool)), ui->saveLocation,
-          SLOT(setEnabled(bool)));
+  connect(huffmanEncoding, &HuffmanEncoding::progressChanged, ui->textEdit, &QTextEdit::append);
+  connect(huffmanEncoding, &HuffmanEncoding::progressCounted, ui->progressBar, &QProgressBar::setValue);
+  connect(huffmanEncoding, &HuffmanEncoding::setEnabled, ui->clearListButton, &QPushButton::setEnabled);
+  connect(huffmanEncoding, &HuffmanEncoding::setEnabled, ui->embedButton, &QPushButton::setEnabled);
+  connect(huffmanEncoding, &HuffmanEncoding::setEnabled, ui->addFilesButton,&QPushButton::setEnabled);
+  connect(huffmanEncoding, &HuffmanEncoding::setEnabled, ui->listWidget,&QPushButton::setEnabled);
+  connect(huffmanEncoding, &HuffmanEncoding::setEnabled, ui->saveLocation,&QPushButton::setEnabled);
 }
 void CompressWindow::showEvent(QShowEvent *) {
   if (!huffmanEncoding->isRunning()) {

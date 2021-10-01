@@ -13,16 +13,12 @@ ExtractWindow::ExtractWindow(QWidget *parent)
 
   connect(huffmanDecoding, &HuffmanDecoding::finished, this,
           [this] { ui->progressBar->setHidden(true); });
-  connect(huffmanDecoding, SIGNAL(progressChanged(QString)), ui->textEdit,
-          SLOT(append(QString)));
-  connect(huffmanDecoding, SIGNAL(progressCounted(int)), ui->progressBar,
-          SLOT(setValue(int)));
-  connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->extractButton,
-          SLOT(setEnabled(bool)));
-  connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->inputButton,
-          SLOT(setEnabled(bool)));
-  connect(huffmanDecoding, SIGNAL(setEnabled(bool)), ui->outputDirButton,
-          SLOT(setEnabled(bool)));
+
+  connect(huffmanDecoding, &HuffmanDecoding::progressChanged, ui->textEdit, &QTextEdit::append);
+  connect(huffmanDecoding, &HuffmanDecoding::progressCounted, ui->progressBar, &QProgressBar::setValue);
+  connect(huffmanDecoding, &HuffmanDecoding::setEnabled, ui->extractButton, &QPushButton::setEnabled);
+  connect(huffmanDecoding, &HuffmanDecoding::setEnabled, ui->inputButton, &QPushButton::setEnabled);
+  connect(huffmanDecoding, &HuffmanDecoding::setEnabled, ui->outputDirButton, &QPushButton::setEnabled);
 }
 
 void ExtractWindow::showEvent(QShowEvent *) {
