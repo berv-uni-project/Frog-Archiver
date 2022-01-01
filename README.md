@@ -1,7 +1,7 @@
 # Frog-Archiver
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d3894185a1144241820b338aff9cf803)](https://app.codacy.com/app/berviantoleo/Frog-Archiver?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/Frog-Archiver&utm_campaign=Badge_Grade_Settings)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2FFrog-Archiver?ref=badge_shield)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/044e92e46a8345c2b7b6f975e15c3515)](https://www.codacy.com/gh/berv-uni-project/tweety/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=berv-uni-project/tweety&amp;utm_campaign=Badge_Grade)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety?ref=badge_shield)
 
 
 Frog Archiver is compression tools for any files you have.
