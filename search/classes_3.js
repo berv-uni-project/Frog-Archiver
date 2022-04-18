@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['huffmandecoding_31',['HuffmanDecoding',['../classHuffmanDecoding.html',1,'']]],
-  ['huffmanencoding_32',['HuffmanEncoding',['../classHuffmanEncoding.html',1,'']]]
+  ['huffmandecoding_0',['HuffmanDecoding',['../classHuffmanDecoding.html',1,'']]],
+  ['huffmanencoding_1',['HuffmanEncoding',['../classHuffmanEncoding.html',1,'']]]
 ];
