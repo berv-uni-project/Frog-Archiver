@@ -18,6 +18,7 @@
 #include <QTextStream>
 #include <QElapsedTimer>
 #include <stdint.h>
+#include <QSettings>
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +38,9 @@ private slots:
   void showLicense();
 
 private:
+  void detectTranslations();
+  QSettings * m_settings();
+  QMap<QString, QList<QTranslator *>> m_translations;
   Ui::MainWindow *ui;
   CompressWindow *compressWindow = nullptr;
   ExtractWindow *extractWindow = nullptr;

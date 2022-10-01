@@ -23,7 +23,10 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
       - name: Build Qt
-        run: qmake -project && qmake src/FrogArchiver.pro CONFIG+=release && make
+        run: |
+          lrelease src/FrogArchiver.pro
+          qmake -project && qmake src/FrogArchiver.pro CONFIG+=release && make
+        
   docs:
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' }}

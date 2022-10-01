@@ -193,32 +193,32 @@ void HuffmanEncoding::encoder() {
   // Close outfile
   int time = timer.elapsed();
   emit progressChanged("-----------------------------------------------------");
-  emit progressChanged("Result : ");
-  emit progressChanged(QString("Output File : %1").arg(of));
-  emit progressChanged(QString("Time Elapsed : %1 ms").arg(time));
+  emit progressChanged(tr("Result : "));
+  emit progressChanged(tr("Output File : %1").arg(of));
+  emit progressChanged(tr("Time Elapsed : %1 ms").arg(time));
   emit progressChanged(
-      QString("Total File Size Process : %1 byte").arg(totalsize));
+      tr("Total File Size Process : %1 byte").arg(totalsize));
   int64_t compresssize = QFileInfo(of).size();
   emit progressChanged(
-      QString("Compressed File Size : %1 byte").arg(compresssize));
+      tr("Compressed File Size : %1 byte").arg(compresssize));
   emit progressChanged(
-      QString("Compress Ratio : %1%").arg(100 * compresssize / totalsize));
+      tr("Compress Ratio : %1%").arg(100 * compresssize / totalsize));
   QList<double>::iterator il = ratat.begin();
   int i = 1;
   while (il != ratat.end()) {
     emit progressChanged(
-        QString("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
+        tr("Rata-rata bit/simbol file %1 : %2").arg(i).arg(*il));
     i++;
     ++il;
   }
   QList<double>::iterator ih = entropit.begin();
   i = 1;
   while (ih != entropit.end()) {
-    emit progressChanged(QString("Entropi file %1 : %2").arg(i).arg(*ih));
+    emit progressChanged(tr("Entropi file %1 : %2").arg(i).arg(*ih));
     i++;
     ++ih;
   }
   emit progressCounted(100);
-  emit progressChanged("Compress Success");
+  emit progressChanged(tr("Compress Success"));
   emit setEnabled(true);
 }
