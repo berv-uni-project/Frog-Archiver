@@ -41,6 +41,11 @@ QMAKE_CXXFLAGS += -std=c++11
 
 RESOURCES += FrogArchiver.qrc
 
+TRANSLATIONS = \
+    i18n/FrogArchiver_en.ts \
+    i18n/FrogArchiver_es.ts \
+    i18n/FrogArchiver_fr.ts \
+
 DISTFILES += \
     config/config.xml \
     packages/org.berviantoleo.frogarchiver/packages.xml

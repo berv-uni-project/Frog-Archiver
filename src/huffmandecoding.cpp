@@ -153,22 +153,22 @@ void HuffmanDecoding::decoder() {
     outfilename = QString::fromStdString(ofile);
     QFileInfo temp(outfilename);
     tempsize = tempsize + temp.size();
-    emit progressChanged(QString("Extract %1 finished").arg(outfilename));
-    emit progressChanged(QString("Size : %1 byte ").arg(temp.size()));
+    emit progressChanged(tr("Extract %1 finished").arg(outfilename));
+    emit progressChanged(tr("Size : %1 byte ").arg(temp.size()));
     emit progressCounted(100 * proccess / number_of_file);
     proccess += 1;
   }
   // end of read decode file
   infile.close();
   int time = timer.elapsed();
-  emit progressChanged("Result : ");
-  emit progressChanged(QString("File Resource : %1").arg(ifi));
-  emit progressChanged(QString("Destination directory : %1").arg(directory));
+  emit progressChanged(tr("Result : "));
+  emit progressChanged(tr("File Resource : %1").arg(ifi));
+  emit progressChanged(tr("Destination directory : %1").arg(directory));
   QFileInfo temp(ifi);
-  emit progressChanged(QString("Resource Size : %1 byte").arg(temp.size()));
-  emit progressChanged(QString("Total Extracted Size : %1 byte").arg(tempsize));
-  emit progressChanged(QString("Time elapsed : %1 ms").arg(time));
+  emit progressChanged(tr("Resource Size : %1 byte").arg(temp.size()));
+  emit progressChanged(tr("Total Extracted Size : %1 byte").arg(tempsize));
+  emit progressChanged(tr("Time elapsed : %1 ms").arg(time));
   emit progressCounted(100);
-  emit progressChanged("Extract Success");
+  emit progressChanged(tr("Extract Success"));
   emit setEnabled(true);
 }

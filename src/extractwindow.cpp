@@ -46,7 +46,7 @@ void ExtractWindow::Extract() {
   QString filename = ui->inputFile->text();
   QString output = ui->extractPosition->text();
   if (!filename.isEmpty() && !output.isEmpty()) {
-    ui->textEdit->setText("");
+    ui->textEdit->clear();
     huffmanDecoding->setInputFile(filename);
     huffmanDecoding->setOutputFile(output);
     huffmanDecoding->start();
@@ -56,7 +56,7 @@ void ExtractWindow::Extract() {
 void ExtractWindow::pickInputFile() {
   QString filename =
       QFileDialog::getOpenFileName(this, tr("Open File to Extract..."),
-                                   QDir::homePath(), "Frog File (*.frog)");
+                                   QDir::homePath(), tr("Frog File (*.frog)"));
   if (!filename.isEmpty())
     ui->inputFile->setText(filename);
 }

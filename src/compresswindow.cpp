@@ -66,7 +66,7 @@ void CompressWindow::addFiles() {
   ui->progressBar->setValue(0);
   // Select Files
   QStringList files = QFileDialog::getOpenFileNames(
-      this, "Files to Compress", QDir::homePath(), "All Files (*.*)");
+      this, tr("Files to Compress"), QDir::homePath(), tr("All Files (*.*)"));
 
   if (files.isEmpty())
     return;
@@ -84,7 +84,7 @@ void CompressWindow::saveAs() {
       this, tr("Save As"), QString(), tr("Frog File (*.frog)"));
   if (outputfile.isNull() || outputfile.isEmpty()) // Cancel
   {
-    ui->textEdit->setText("Operation Canceled."); // Cancel operation
+    ui->textEdit->setText(tr("Operation Canceled.")); // Cancel operation
   } else                                          // get filename to save
   {
     if (!outputfile.endsWith(".frog")) {
@@ -103,7 +103,7 @@ void CompressWindow::compress() {
     int64_t totalsize;
     totalsize = 0;
 
-    ui->textEdit->setText("Preparing File : ");
+    ui->textEdit->setText(tr("Preparing File : "));
 
     QStringList list;
     for (int i = 0; i < ui->listWidget->count(); ++i) {
@@ -115,12 +115,12 @@ void CompressWindow::compress() {
     }
 
     // Starting
-    ui->textEdit->append("Compressing...");
+    ui->textEdit->append(tr("Compressing..."));
     huffmanEncoding->setInputFile(list);
     huffmanEncoding->setOutputFile(ui->saveLocation->text());
     huffmanEncoding->setTotalSize(totalsize);
     huffmanEncoding->start();
   } else {
-    ui->textEdit->setText("Please fill all requirement");
+    ui->textEdit->setText(tr("Please fill all requirement"));
   }
 }
