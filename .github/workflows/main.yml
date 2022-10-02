@@ -16,7 +16,7 @@ jobs:
   build:
     strategy:
         matrix:
-          os: [ubuntu-22.04, windows-latest]
+          os: [ubuntu-22.04, windows-latest, macos-latest]
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -29,9 +29,10 @@ jobs:
         run: |
           cmake -S. -Bbuild
           cmake --build build --target package
+      # ship artifacts each os
       - uses: actions/upload-artifact@v3
         with:
-          name: frog-archiver
+          name: frog-archiver-${{ matrix.os }}
           path: build/*.tar.gz
   docs:
     runs-on: ubuntu-20.04
