@@ -33,13 +33,16 @@ public:
 
   ~MainWindow();
 
+protected:
+  void changeEvent(QEvent *e);
 private slots:
   void showAbout();
   void showLicense();
+  void changeLanguage(QAction *);
 
 private:
   void detectTranslations();
-  QSettings * m_settings();
+  QSettings * m_settings;
   QMap<QString, QList<QTranslator *>> m_translations;
   Ui::MainWindow *ui;
   CompressWindow *compressWindow = nullptr;
