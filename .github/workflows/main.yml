@@ -28,7 +28,7 @@ jobs:
           cmake --build build --target package
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: frog-archiver
           path: build/*.tar.gz
   docs:
     runs-on: ubuntu-20.04
