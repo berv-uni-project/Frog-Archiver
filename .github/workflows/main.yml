@@ -24,9 +24,12 @@ jobs:
         uses: jurplel/install-qt-action@v2
       - name: Build Qt
         run: |
-          lrelease src/FrogArchiver.pro
-          qmake -project && qmake src/FrogArchiver.pro CONFIG+=release && make
-        
+          cmake -S. -Bbuild
+          cmake --build build --target package
+      - uses: actions/upload-artifact@v3
+        with:
+          name: frog-archiver
+          path: build/*.tar.gz
   docs:
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' }}

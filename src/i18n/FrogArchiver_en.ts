@@ -4,12 +4,10 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../about.ui" line="26"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="38"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -48,17 +46,14 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;;&quot;&gt;Bervianto Leo Pratama&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="68"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="71"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close Button&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close Button&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="74"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -66,77 +61,62 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>CompressWindow</name>
     <message>
-        <location filename="../compresswindow.ui" line="14"/>
         <source>Frog Archiver - Compress Files</source>
         <translation>Frog Archiver - Compress Files</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="20"/>
         <source>File List</source>
         <translation>File List</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="33"/>
         <source>Add Files</source>
         <translation>Add Files</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="44"/>
         <source>Clear Files</source>
         <translation>Clear Files</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="51"/>
         <source>Save Location</source>
         <translation>Save Location</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="67"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../compresswindow.ui" line="80"/>
         <source>Compress</source>
         <translation>Compress</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="69"/>
         <source>Files to Compress</source>
         <translation>Files to Compress</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="69"/>
         <source>All Files (*.*)</source>
         <translation>All Files (*.*)</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="84"/>
         <source>Save As</source>
         <translation>Save As</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="84"/>
         <source>Frog File (*.frog)</source>
         <translation>Frog File (*.frog)</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="87"/>
         <source>Operation Canceled.</source>
         <translation>Operation Canceled.</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="106"/>
         <source>Preparing File : </source>
         <translation>Preparing File : </translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="118"/>
         <source>Compressing...</source>
         <translation>Compressing...</translation>
     </message>
     <message>
-        <location filename="../compresswindow.cpp" line="124"/>
         <source>Please fill all requirement</source>
         <translation>Please fill all requirement</translation>
     </message>
@@ -144,63 +124,50 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ExtractWindow</name>
     <message>
-        <location filename="../extractwindow.ui" line="14"/>
         <source>Frog Archiver - Extract</source>
         <translation>Frog Archiver - Extract</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="26"/>
         <source>Input Frog File</source>
         <translation>Input Frog File</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="43"/>
         <source>Select .frog File</source>
         <translation>Select .frog File</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="50"/>
         <source>Output Directory</source>
         <translation>Output Directory</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="67"/>
         <source>Select Output Directory</source>
         <translation>Select Output Directory</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="74"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="94"/>
-        <location filename="../extractwindow.ui" line="118"/>
         <source>Extract</source>
         <translation>Extract</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="113"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../extractwindow.ui" line="123"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../extractwindow.cpp" line="58"/>
         <source>Open File to Extract...</source>
         <translation>Open File to Extract...</translation>
     </message>
     <message>
-        <location filename="../extractwindow.cpp" line="59"/>
         <source>Frog File (*.frog)</source>
         <translation>Frog File (*.frog)</translation>
     </message>
     <message>
-        <location filename="../extractwindow.cpp" line="66"/>
         <source>Choose Directory to Extract</source>
         <translation>Choose Directory to Extract</translation>
     </message>
@@ -208,47 +175,38 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>HuffmanDecoding</name>
     <message>
-        <location filename="../huffmandecoding.cpp" line="156"/>
         <source>Extract %1 finished</source>
         <translation>Extract %1 finished</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="157"/>
         <source>Size : %1 byte </source>
         <translation>Size : %1 byte </translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="164"/>
         <source>Result : </source>
         <translation>Result : </translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="165"/>
         <source>File Resource : %1</source>
         <translation>File Resource : %1</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="166"/>
         <source>Destination directory : %1</source>
         <translation>Destination directory : %1</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="168"/>
         <source>Resource Size : %1 byte</source>
         <translation>Resource Size : %1 byte</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="169"/>
         <source>Total Extracted Size : %1 byte</source>
         <translation>Total Extracted Size : %1 byte</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="170"/>
         <source>Time elapsed : %1 ms</source>
         <translation>Time elapsed : %1 ms</translation>
     </message>
     <message>
-        <location filename="../huffmandecoding.cpp" line="172"/>
         <source>Extract Success</source>
         <translation>Extract Success</translation>
     </message>
@@ -256,47 +214,38 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>HuffmanEncoding</name>
     <message>
-        <location filename="../huffmanencoding.cpp" line="196"/>
         <source>Result : </source>
         <translation>Result : </translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="197"/>
         <source>Output File : %1</source>
         <translation>Output File : %1</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="198"/>
         <source>Time Elapsed : %1 ms</source>
         <translation>Time Elapsed : %1 ms</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="200"/>
         <source>Total File Size Process : %1 byte</source>
         <translation>Total File Size Process : %1 byte</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="203"/>
         <source>Compressed File Size : %1 byte</source>
         <translation>Compressed File Size : %1 byte</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="205"/>
         <source>Compress Ratio : %1%</source>
         <translation>Compress Ratio : %1%</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="210"/>
         <source>Rata-rata bit/simbol file %1 : %2</source>
         <translation>Rata-rata bit/simbol file %1 : %2</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="217"/>
         <source>Entropi file %1 : %2</source>
         <translation>Entropi file %1 : %2</translation>
     </message>
     <message>
-        <location filename="../huffmanencoding.cpp" line="222"/>
         <source>Compress Success</source>
         <translation>Compress Success</translation>
     </message>
@@ -304,12 +253,10 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>License</name>
     <message>
-        <location filename="../license.ui" line="32"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../license.ui" line="60"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -655,86 +602,68 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
         <source>Frog Archiver</source>
         <translation>Frog Archiver</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="27"/>
-        <location filename="../mainwindow.ui" line="109"/>
         <source>Compress</source>
         <translation>Compress</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="38"/>
-        <location filename="../mainwindow.ui" line="118"/>
         <source>Extract</source>
         <translation>Extract</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="61"/>
         <source>File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="70"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="78"/>
         <source>Language</source>
         <translation>Language</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="100"/>
         <source>About</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="127"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="136"/>
         <source>CompressButton</source>
         <translation>CompressButton</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="139"/>
         <source>Compress your files</source>
         <translation>Compress your files</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
         <source>ExtractButton</source>
         <translation>ExtractButton</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="151"/>
         <source>Extract BZip File</source>
         <translation>Extract BZip File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="156"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="91"/>
         <source>TRANSLATE TO YOUR LANGUAGE NAME</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
         <source>Language Changed</source>
-        <translation>Language Changed</translation>
+        <translation type="vanished">Language Changed</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
         <source>You must restart for the language to change.</source>
-        <translation>You must restart for the language to change.</translation>
+        <translation type="vanished">You must restart for the language to change.</translation>
     </message>
 </context>
 </TS>
