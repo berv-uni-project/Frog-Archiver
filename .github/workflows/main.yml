@@ -15,6 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     strategy:
+        fail-fast: false
         matrix:
           os: [ubuntu-22.04, windows-latest, macos-latest]
     # The type of runner that the job will run on
@@ -25,15 +26,18 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
-      - name: Build Qt
+      - name: Build
         run: |
-          cmake -S. -Bbuild
-          cmake --build build --target package
+          cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
+          cmake --build build  --config Release --target package
       # ship artifacts each os
       - uses: actions/upload-artifact@v3
         with:
           name: frog-archiver-${{ matrix.os }}
-          path: build/*.tar.gz
+          path: |
+            build/*.tar.gz
+            build/*.zip
+            build/*.dmg
   docs:
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' }}

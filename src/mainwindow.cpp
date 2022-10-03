@@ -12,7 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
       compressWindow(new CompressWindow(this)),
       extractWindow(new ExtractWindow(this)) {
     ui->setupUi(this);
-    m_settings = new QSettings(QStringLiteral("%1/settings.ini").arg(QCoreApplication::applicationDirPath()), QSettings::IniFormat);
+    if (QFile(QStringLiteral("%1/settings.ini").arg(QCoreApplication::applicationDirPath())).exists())
+        m_settings = new QSettings(QStringLiteral("%1/settings.ini").arg(QCoreApplication::applicationDirPath()), QSettings::IniFormat);
+    else
+        m_settings = new QSettings(QSettings::NativeFormat, QSettings::UserScope, QStringLiteral("berv-uni"), QStringLiteral("frogarchiver"));
     detectTranslations();
 
     QSize iconSize = QSize(fontMetrics().height(), fontMetrics().height());
@@ -61,9 +64,20 @@ void MainWindow::detectTranslations()
 {
     ui->menuLanguage->clear();
     m_translations.clear();
+    const QStringList nameFilter{QStringLiteral("FrogArchiver_*.qm")};
     const QString qt_ = QStringLiteral("qt_");
-    const QStringList nameFilter ={ QStringLiteral("FrogArchiver_*.qm") };
-    QDir i18nDir (QStringLiteral("%1/i18n/").arg(qApp->applicationDirPath()));
+
+    QDir i18nDir(QStringLiteral("%1/%2").arg(QCoreApplication::applicationDirPath(), QStringLiteral("i18n")));
+    if (i18nDir.entryList(nameFilter, QDir::Files, QDir::Name).isEmpty()) {
+        i18nDir.setPath(QStringLiteral("%1/../i18n").arg(QCoreApplication::applicationDirPath()));
+        if (i18nDir.entryList(nameFilter, QDir::Files, QDir::Name).isEmpty()) {
+            i18nDir.setPath(QStringLiteral("%1/../share/frogarchiver/i18n").arg(QCoreApplication::applicationDirPath()));
+            if (i18nDir.entryList(nameFilter, QDir::Files, QDir::Name).isEmpty()) {
+                i18nDir.setPath(QStringLiteral("/usr/share/frogarchiver/i18n"));
+            }
+        }
+    }
+
     const QStringList langList = i18nDir.entryList(nameFilter,QDir::Files, QDir::Name);
     for (const QString &translation : langList) {
         auto *appTranslator = new QTranslator;
