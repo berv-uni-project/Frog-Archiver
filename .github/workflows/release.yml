@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Release
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the develop branch
+on:
+  push:
+    tags:
+      - '*'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  release:
+    strategy:
+        fail-fast: false
+        matrix:
+          include:
+            - os: ubuntu-22.04
+              artifact_name: build/*.tar.gz
+            - os: windows-latest
+              artifact_name: build/*.zip
+            - os: macos-latest
+              artifact_name: build/*.dmg
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+      - name: Build
+        run: |
+          cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
+          cmake --build build  --config Release --target package
+      # ship release
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ matrix.artifact_name }}
+          file_glob: true
+          tag: ${{ github.ref }}
