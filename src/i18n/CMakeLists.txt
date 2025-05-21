@@ -1,6 +1,6 @@
 set_directory_properties(PROPERTIES CLEAN_NO_CUSTOM 1)
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS
     Core
     LinguistTools
 )
