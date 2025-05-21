@@ -1,6 +1,6 @@
 
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
-get_target_property(qmake_executable Qt5::qmake IMPORTED_LOCATION)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
+get_target_property(qmake_executable Qt6::qmake IMPORTED_LOCATION)
 get_filename_component(_qt_bin_dir "${qmake_executable}" DIRECTORY)
 if(WIN32 OR APPLE)
     if(WIN32)
