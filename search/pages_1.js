@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['frog_2darchiver_0',['Frog-Archiver',['../index.html',1,'']]]
+  ['contributing_0',['Contributing',['../md_CONTRIBUTING.html',1,'']]]
 ];

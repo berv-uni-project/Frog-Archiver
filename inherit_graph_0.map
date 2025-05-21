@@ -1,7 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,73,105"/>
-<area shape="rect" id="node2" href="$classAbout.html" title=" " alt="" coords="157,5,213,31"/>
-<area shape="rect" id="node3" href="$classCompressWindow.html" title=" " alt="" coords="121,55,248,80"/>
-<area shape="rect" id="node4" href="$classExtractWindow.html" title=" " alt="" coords="131,104,239,129"/>
-<area shape="rect" id="node5" href="$classLicense.html" title=" " alt="" coords="151,153,219,179"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,73,106"/>
+<area shape="rect" id="Node000001" href="$classAbout.html" title=" " alt="" coords="156,5,212,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="70,69,119,40,154,25,157,30,122,45,73,74"/>
+<area shape="rect" id="Node000002" href="$classCompressWindow.html" title=" " alt="" coords="121,55,247,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="88,82,120,76,121,81,89,87"/>
+<area shape="rect" id="Node000003" href="$classExtractWindow.html" title=" " alt="" coords="130,104,238,130"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="89,98,130,105,129,111,88,104"/>
+<area shape="rect" id="Node000004" href="$classLicense.html" title=" " alt="" coords="150,153,218,179"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="74,112,122,140,151,152,149,157,119,145,71,117"/>
 </map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['compresswindow_0',['CompressWindow',['../classCompressWindow.html',1,'']]],
-  ['contributing_1',['Contributing',['../md_CONTRIBUTING.html',1,'']]]
+  ['1_200_0',['Frog Archiver v.1.0',['../index.html#autotoc_md1',1,'']]]
 ];

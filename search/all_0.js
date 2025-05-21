@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['about_0',['About',['../classAbout.html',1,'']]]
+  ['0_0',['Frog Archiver v.1.0',['../index.html#autotoc_md1',1,'']]]
 ];

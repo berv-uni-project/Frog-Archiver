@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['operator_21_3d_0',['operator!=',['../classTree.html#ad82d9e74de1ac4fe561c1c140b1259a6',1,'Tree']]],
-  ['operator_3c_1',['operator&lt;',['../classTree.html#a7d4985990031db032d7821d810a697c9',1,'Tree']]],
-  ['operator_3c_3d_2',['operator&lt;=',['../classTree.html#a92fda3b3d69ecafc72aeb9695a076d4b',1,'Tree']]],
-  ['operator_3d_3d_3',['operator==',['../classTree.html#a551fd18ab0ccd4cbf3868f4d449688a4',1,'Tree']]],
-  ['operator_3e_4',['operator&gt;',['../classTree.html#ae18763c9962256c57aff569621c60999',1,'Tree']]],
-  ['operator_3e_3d_5',['operator&gt;=',['../classTree.html#a6b32e0c8239ce44c4ce826807b791b2c',1,'Tree']]]
+  ['get_5fhuf_5fchar_0',['get_huf_char',['../classTree.html#a099ecba4286f020cd476e006a9f3c1c1',1,'Tree']]],
+  ['get_5fleft_1',['get_left',['../classTree.html#aab6c4c52d7e25284036b6348413b3fd4',1,'Tree']]],
+  ['get_5fright_2',['get_right',['../classTree.html#a405da4f1f4ba605da5984eb7805ca4ad',1,'Tree']]],
+  ['get_5froot_3',['get_root',['../classTree.html#a81c751499309c15e04cda82f533cbaeb',1,'Tree']]]
 ];
